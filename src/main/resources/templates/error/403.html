@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>403 - Kein Zugriff</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #fef2f2; padding: 2rem; text-align: center; }
+        .container { max-width: 600px; margin: auto; background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.05); }
+        h1 { color: #e53e3e; font-size: 2rem; margin-bottom: 1rem; }
+        p { color: #4a5568; font-size: 1rem; }
+        .button { margin-top: 2rem; background: #3182ce; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 6px; text-decoration: none; font-size: 1rem; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>403 - Kein Zugriff</h1>
+    <p>Du hast keine Berechtigung, diese Seite aufzurufen.</p>
+    <a th:href="@{/'/'}" class="button">Zurück zur Startseite</a>
+</div>
+</body>
+</html>
