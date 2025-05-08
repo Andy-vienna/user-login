@@ -18,12 +18,12 @@ import com.example.demo.repository.UserRepository;
 import jakarta.validation.Valid;
 
 @Controller
-public class AuthViewController {
+public class AuthController {
 
 	private final UserRepository userRepository;
 
     @Autowired
-    public AuthViewController(UserRepository userRepository) {
+    public AuthController(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
