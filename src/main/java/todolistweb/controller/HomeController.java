@@ -22,6 +22,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+/** HomeController
+ *  Controller for the home page of the application.
+ *  Provides endpoints for displaying user-specific information,
+ *  logs, and todo lists.
+ */
 @Controller
 public class HomeController {
 

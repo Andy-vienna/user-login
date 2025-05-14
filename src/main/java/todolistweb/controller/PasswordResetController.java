@@ -20,6 +20,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import jakarta.mail.MessagingException;
 import jakarta.validation.constraints.NotEmpty;
 
+/** PasswordController
+ *  Controller for handling password reset functionality.
+ *  Provides endpoints for requesting a password reset,
+ *  validating the reset token,
+ *  and updating the password.
+ */
 @Controller
 public class PasswordResetController {
 

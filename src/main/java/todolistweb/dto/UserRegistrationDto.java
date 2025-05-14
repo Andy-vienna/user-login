@@ -6,6 +6,15 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
+/** DTO für die Benutzerregistrierung.
+ *  *  @author Andreas Fischer
+ *  *  @version 1.0
+ *  *  @since 2025-05-10
+ *  *  @PasswordMatches ist eine benutzerdefinierte Validierung, die sicherstellt, dass das Passwort und die Passwortbestätigung übereinstimmen.
+ *  *  @NotEmpty stellt sicher, dass die Felder nicht leer sind.
+ *  *  @Size stellt sicher, dass das Passwort mindestens 8 Zeichen lang ist.
+ *  *  @Pattern stellt sicher, dass das Passwort mindestens einen Großbuchstaben, einen Kleinbuchstaben, eine Zahl und ein Sonderzeichen enthält.
+ */
 @PasswordMatches
 public class UserRegistrationDto {
 

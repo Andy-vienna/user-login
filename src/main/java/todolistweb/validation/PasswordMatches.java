@@ -9,6 +9,9 @@ import java.lang.annotation.Target;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 
+/** PasswordValidation
+ *  Passwort-Prüfer um zu prüfen, ob die eingegebenen Passwörter übereinstimmen.
+ */
 @Documented
 @Constraint(validatedBy = PasswordMatchesValidator.class)
 @Target({ ElementType.TYPE })

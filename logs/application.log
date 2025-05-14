@@ -1,485 +1,15 @@
-2025-05-11T08:12:45.822+02:00  INFO 15972 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 15972 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T08:12:45.846+02:00  INFO 15972 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T08:12:48.589+02:00  INFO 15972 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T08:12:48.590+02:00  INFO 15972 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T08:12:48.718+02:00  INFO 15972 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T08:12:49.233+02:00  INFO 15972 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T08:12:49.361+02:00  INFO 15972 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T08:12:49.418+02:00  INFO 15972 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T08:12:49.891+02:00  INFO 15972 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T08:12:50.401+02:00  INFO 15972 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 569fe95f-eefd-4d36-b1ea-6f0cabcbdbb9
-2025-05-11T08:12:50.406+02:00  INFO 15972 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T08:12:51.879+02:00  INFO 15972 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T08:12:55.844+02:00  INFO 15972 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 10.805 seconds (process running for 11.487)
-2025-05-11T08:36:44.383+02:00  INFO 25572 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 25572 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T08:36:44.386+02:00  INFO 25572 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T08:36:46.962+02:00  INFO 25572 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T08:36:46.963+02:00  INFO 25572 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T08:36:47.068+02:00  INFO 25572 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T08:36:47.609+02:00  INFO 25572 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T08:36:47.769+02:00  INFO 25572 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T08:36:47.832+02:00  INFO 25572 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T08:36:48.262+02:00  INFO 25572 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T08:36:48.875+02:00  INFO 25572 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 1211c1d6-6aaf-42cf-8777-e92c618c4876
-2025-05-11T08:36:48.878+02:00  INFO 25572 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T08:36:50.318+02:00  INFO 25572 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T08:36:54.047+02:00  INFO 25572 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 10.371 seconds (process running for 11.007)
-2025-05-11T08:37:56.465+02:00  INFO 31872 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 31872 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T08:37:56.469+02:00  INFO 31872 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T08:37:59.070+02:00  INFO 31872 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T08:37:59.071+02:00  INFO 31872 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T08:37:59.182+02:00  INFO 31872 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T08:37:59.728+02:00  INFO 31872 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T08:37:59.875+02:00  INFO 31872 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T08:37:59.938+02:00  INFO 31872 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T08:38:00.368+02:00  INFO 31872 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T08:38:00.879+02:00  INFO 31872 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 55437525-75b1-4f15-8c2e-4d0a6d098dfe
-2025-05-11T08:38:00.881+02:00  INFO 31872 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T08:38:02.265+02:00  INFO 31872 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T08:38:06.101+02:00  INFO 31872 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 10.349 seconds (process running for 11.004)
-2025-05-11T08:40:19.510+02:00  INFO 1020 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 1020 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T08:40:19.515+02:00  INFO 1020 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T08:40:22.223+02:00  INFO 1020 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T08:40:22.224+02:00  INFO 1020 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T08:40:22.333+02:00  INFO 1020 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T08:40:22.951+02:00  INFO 1020 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T08:40:23.097+02:00  INFO 1020 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T08:40:23.151+02:00  INFO 1020 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T08:40:23.591+02:00  INFO 1020 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T08:40:24.087+02:00  INFO 1020 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: db60e43c-6446-457a-9b12-c76cdf8d446d
-2025-05-11T08:40:24.091+02:00  INFO 1020 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T08:40:25.500+02:00  INFO 1020 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T08:40:29.624+02:00  INFO 1020 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 10.849 seconds (process running for 11.513)
-2025-05-11T08:41:11.197+02:00  INFO 15228 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 15228 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T08:41:11.202+02:00  INFO 15228 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T08:41:13.875+02:00  INFO 15228 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T08:41:13.876+02:00  INFO 15228 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T08:41:14.000+02:00  INFO 15228 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T08:41:14.546+02:00  INFO 15228 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T08:41:14.691+02:00  INFO 15228 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T08:41:14.747+02:00  INFO 15228 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T08:41:15.184+02:00  INFO 15228 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T08:41:15.729+02:00  INFO 15228 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 6d06b7a8-a262-409f-acc6-bc5ede054277
-2025-05-11T08:41:15.732+02:00  INFO 15228 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T08:41:17.107+02:00  INFO 15228 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T08:41:21.044+02:00  INFO 15228 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 10.556 seconds (process running for 11.233)
-2025-05-11T08:41:51.519+02:00  INFO 18576 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 18576 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T08:41:51.525+02:00  INFO 18576 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T08:41:54.633+02:00  INFO 18576 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T08:41:54.633+02:00  INFO 18576 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T08:41:54.741+02:00  INFO 18576 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T08:41:55.146+02:00  INFO 18576 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T08:41:55.296+02:00  INFO 18576 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T08:41:55.364+02:00  INFO 18576 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T08:41:55.925+02:00  INFO 18576 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T08:41:56.516+02:00  INFO 18576 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 2644c255-8c34-4056-b377-3bad4f27f962
-2025-05-11T08:41:56.523+02:00  INFO 18576 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T08:41:58.099+02:00  INFO 18576 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T08:42:02.121+02:00  INFO 18576 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 11.506 seconds (process running for 12.78)
-2025-05-11T08:45:41.749+02:00  INFO 36312 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 36312 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T08:45:41.753+02:00  INFO 36312 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T08:45:45.128+02:00  INFO 36312 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T08:45:45.129+02:00  INFO 36312 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T08:45:45.237+02:00  INFO 36312 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T08:45:45.693+02:00  INFO 36312 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T08:45:45.841+02:00  INFO 36312 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T08:45:45.936+02:00  INFO 36312 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T08:45:46.644+02:00  INFO 36312 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T08:45:47.299+02:00  INFO 36312 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: f1beb185-f2cc-45f1-9a42-bf6cf378c278
-2025-05-11T08:45:47.304+02:00  INFO 36312 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T08:45:48.908+02:00  INFO 36312 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T08:45:52.487+02:00  INFO 36312 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 11.599 seconds (process running for 12.59)
-2025-05-11T08:47:03.852+02:00  INFO 4192 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 4192 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T08:47:03.854+02:00  INFO 4192 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T08:47:06.737+02:00  INFO 4192 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T08:47:06.738+02:00  INFO 4192 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T08:47:06.848+02:00  INFO 4192 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T08:47:07.238+02:00  INFO 4192 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T08:47:07.371+02:00  INFO 4192 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T08:47:07.450+02:00  INFO 4192 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T08:47:08.039+02:00  INFO 4192 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T08:47:08.686+02:00  INFO 4192 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 72c14992-e611-45ce-9206-ff5da1c277cb
-2025-05-11T08:47:08.690+02:00  INFO 4192 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T08:47:10.469+02:00  INFO 4192 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T08:47:14.307+02:00  INFO 4192 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 11.328 seconds (process running for 12.275)
-2025-05-11T08:51:22.641+02:00  INFO 1056 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 1056 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T08:51:22.645+02:00  INFO 1056 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T08:51:25.249+02:00  INFO 1056 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T08:51:25.250+02:00  INFO 1056 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T08:51:25.370+02:00  INFO 1056 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T08:51:25.947+02:00  INFO 1056 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T08:51:26.084+02:00  INFO 1056 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T08:51:26.136+02:00  INFO 1056 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T08:51:26.565+02:00  INFO 1056 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T08:51:27.134+02:00  INFO 1056 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 412c656c-150d-409d-8f4f-174a908ea4f4
-2025-05-11T08:51:27.137+02:00  INFO 1056 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T08:51:28.522+02:00  INFO 1056 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T08:51:31.786+02:00  WARN 1056 --- [todo-list-web] [main] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 510920e4-8faa-4310-8fdb-8088c50b2bf8
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-05-11T08:51:32.049+02:00  INFO 1056 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 10.169 seconds (process running for 10.837)
-2025-05-11T08:57:14.879+02:00  INFO 32368 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 32368 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T08:57:14.883+02:00  INFO 32368 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T08:57:17.330+02:00  INFO 32368 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T08:57:17.331+02:00  INFO 32368 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T08:57:17.430+02:00  INFO 32368 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T08:57:17.948+02:00  INFO 32368 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T08:57:18.082+02:00  INFO 32368 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T08:57:18.131+02:00  INFO 32368 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T08:57:18.586+02:00  INFO 32368 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T08:57:19.182+02:00  INFO 32368 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 7b820223-9020-42be-9e99-a8587f2c8602
-2025-05-11T08:57:19.185+02:00  INFO 32368 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T08:57:20.608+02:00  INFO 32368 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T08:57:24.406+02:00  WARN 32368 --- [todo-list-web] [main] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 45fdc580-b859-43a2-8015-f8cce8ea1e8e
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-05-11T08:57:24.963+02:00  INFO 32368 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 10.801 seconds (process running for 11.501)
-2025-05-11T09:04:18.735+02:00  INFO 19564 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 19564 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T09:04:18.739+02:00  INFO 19564 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T09:04:21.073+02:00  INFO 19564 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T09:04:21.073+02:00  INFO 19564 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T09:04:21.176+02:00  INFO 19564 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T09:04:21.681+02:00  INFO 19564 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T09:04:21.790+02:00  INFO 19564 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T09:04:21.841+02:00  INFO 19564 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T09:04:22.295+02:00  INFO 19564 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T09:04:22.817+02:00  INFO 19564 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: cc8e030d-15b2-4e5c-8d1e-0e18b72ce9da
-2025-05-11T09:04:22.821+02:00  INFO 19564 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T09:04:24.221+02:00  INFO 19564 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T09:04:27.452+02:00  WARN 19564 --- [todo-list-web] [main] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 5b333d6e-726c-449c-8aa1-866f70697c01
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-05-11T09:04:27.861+02:00  INFO 19564 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 9.851 seconds (process running for 10.547)
-2025-05-11T09:05:04.023+02:00  INFO 34332 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 34332 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T09:05:04.027+02:00  INFO 34332 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T09:05:06.956+02:00  INFO 34332 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T09:05:06.957+02:00  INFO 34332 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T09:05:07.071+02:00  INFO 34332 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T09:05:07.483+02:00  INFO 34332 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T09:05:07.585+02:00  INFO 34332 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T09:05:07.646+02:00  INFO 34332 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T09:05:08.203+02:00  INFO 34332 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T09:05:08.825+02:00  INFO 34332 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: cb287ba3-17e6-4afe-9493-ee0c4f1e1ae4
-2025-05-11T09:05:08.829+02:00  INFO 34332 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T09:05:10.443+02:00  INFO 34332 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T09:05:13.666+02:00  WARN 34332 --- [todo-list-web] [main] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 11a60317-0d68-45f4-9d9c-608a7b512ce4
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-05-11T09:05:14.042+02:00  INFO 34332 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 10.898 seconds (process running for 11.942)
-2025-05-11T09:05:42.918+02:00  INFO 14284 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 14284 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T09:05:42.922+02:00  INFO 14284 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T09:05:45.930+02:00  INFO 14284 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T09:05:45.931+02:00  INFO 14284 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T09:05:46.082+02:00  INFO 14284 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T09:05:46.578+02:00  INFO 14284 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T09:05:46.733+02:00  INFO 14284 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T09:05:46.796+02:00  INFO 14284 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T09:05:47.331+02:00  INFO 14284 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T09:05:47.913+02:00  INFO 14284 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: f2f5b2e6-d105-446e-9b74-ea839281ad24
-2025-05-11T09:05:47.919+02:00  INFO 14284 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T09:05:49.640+02:00  INFO 14284 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T09:05:52.341+02:00  WARN 14284 --- [todo-list-web] [main] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 47de5c56-e6bd-4432-a51e-e34cf3291208
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-05-11T09:05:52.725+02:00  INFO 14284 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 10.678 seconds (process running for 11.729)
-2025-05-11T09:05:59.762+02:00 ERROR 14284 --- [todo-list-web] [main] o.s.boot.SpringApplication               : Application run failed
-
-java.awt.HeadlessException: null
-	at java.desktop/java.awt.SystemTray.getSystemTray(SystemTray.java:174) ~[na:na]
-	at todolistweb.trayicon.TrayIconApp.setupTrayIcon(TrayIconApp.java:19) ~[classes/:na]
-	at todolistweb.ToDoListWeb.run(ToDoListWeb.java:28) ~[classes/:na]
-	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:790) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83) ~[spring-core-6.1.6.jar:6.1.6]
-	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60) ~[spring-core-6.1.6.jar:6.1.6]
-	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88) ~[spring-core-6.1.6.jar:6.1.6]
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:789) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774) ~[spring-boot-3.2.5.jar:3.2.5]
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184) ~[na:na]
-	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357) ~[na:na]
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:571) ~[na:na]
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560) ~[na:na]
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151) ~[na:na]
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174) ~[na:na]
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265) ~[na:na]
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636) ~[na:na]
-	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:341) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
-	at todolistweb.ToDoListWeb.main(ToDoListWeb.java:23) ~[classes/:na]
-
-2025-05-11T09:05:59.785+02:00  INFO 14284 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-05-11T09:05:59.794+02:00  INFO 14284 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-05-11T09:12:14.616+02:00  INFO 10104 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 10104 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T09:12:14.621+02:00  INFO 10104 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T09:12:17.654+02:00  INFO 10104 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T09:12:17.655+02:00  INFO 10104 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T09:12:17.771+02:00  INFO 10104 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T09:12:18.227+02:00  INFO 10104 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T09:12:18.373+02:00  INFO 10104 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T09:12:18.432+02:00  INFO 10104 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T09:12:18.996+02:00  INFO 10104 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T09:12:19.509+02:00  INFO 10104 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 6857eefc-f2a5-4ff3-894e-55140af5bf4b
-2025-05-11T09:12:19.512+02:00  INFO 10104 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T09:12:21.137+02:00  INFO 10104 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T09:12:24.317+02:00  WARN 10104 --- [todo-list-web] [main] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 5bce29eb-69a6-48b1-8df6-cdba80bb073d
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-05-11T09:12:24.694+02:00  INFO 10104 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 10.938 seconds (process running for 11.907)
-2025-05-11T09:12:43.684+02:00  INFO 10104 --- [todo-list-web] [AWT-EventQueue-0] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-05-11T09:12:43.694+02:00  INFO 10104 --- [todo-list-web] [AWT-EventQueue-0] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-05-11T09:49:11.885+02:00  INFO 23388 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 23388 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T09:49:11.889+02:00  INFO 23388 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T09:49:14.319+02:00  INFO 23388 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T09:49:14.320+02:00  INFO 23388 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T09:49:14.433+02:00  INFO 23388 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T09:49:14.910+02:00  INFO 23388 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T09:49:15.028+02:00  INFO 23388 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T09:49:15.075+02:00  INFO 23388 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T09:49:15.495+02:00  INFO 23388 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T09:49:16.033+02:00  INFO 23388 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 505d1a88-78f9-4410-b12c-4472c49b6020
-2025-05-11T09:49:16.036+02:00  INFO 23388 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T09:49:17.386+02:00  INFO 23388 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T09:49:20.466+02:00  WARN 23388 --- [todo-list-web] [main] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 7f00252d-18d8-4347-96a1-ca8cc636ab23
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-05-11T09:49:20.905+02:00  INFO 23388 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 9.674 seconds (process running for 10.301)
-2025-05-11T09:49:30.946+02:00  INFO 23388 --- [todo-list-web] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-11T09:49:51.251+02:00  INFO 23388 --- [todo-list-web] [AWT-EventQueue-0] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-05-11T09:49:51.259+02:00  INFO 23388 --- [todo-list-web] [AWT-EventQueue-0] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-05-11T09:53:53.441+02:00  INFO 37592 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 37592 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T09:53:53.445+02:00  INFO 37592 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T09:53:55.924+02:00  INFO 37592 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T09:53:55.924+02:00  INFO 37592 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T09:53:56.028+02:00  INFO 37592 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T09:53:56.502+02:00  INFO 37592 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T09:53:56.618+02:00  INFO 37592 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T09:53:56.691+02:00  INFO 37592 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T09:53:57.081+02:00  INFO 37592 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T09:53:57.720+02:00  INFO 37592 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 28662ab1-342a-481f-ad78-21aea929fa63
-2025-05-11T09:53:57.724+02:00  INFO 37592 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T09:53:59.069+02:00  INFO 37592 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T09:54:02.231+02:00  WARN 37592 --- [todo-list-web] [main] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 53ac2ca6-4729-45f2-83a3-5bb4bc18ce66
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-05-11T09:54:02.524+02:00  INFO 37592 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 9.798 seconds (process running for 10.442)
-2025-05-11T09:54:08.901+02:00  INFO 37592 --- [todo-list-web] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-11T09:55:39.263+02:00  INFO 28664 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 28664 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T09:55:39.266+02:00  INFO 28664 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T09:55:41.668+02:00  INFO 28664 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T09:55:41.669+02:00  INFO 28664 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T09:55:41.782+02:00  INFO 28664 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T09:55:42.267+02:00  INFO 28664 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T09:55:42.393+02:00  INFO 28664 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T09:55:42.441+02:00  INFO 28664 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T09:55:42.861+02:00  INFO 28664 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T09:55:43.410+02:00  INFO 28664 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 962df0ac-98e1-4f0b-ba0a-9090e08c307b
-2025-05-11T09:55:43.413+02:00  INFO 28664 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T09:55:44.774+02:00  INFO 28664 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T09:55:48.510+02:00  WARN 28664 --- [todo-list-web] [main] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 6c9781d9-f821-468f-a566-34fd56f381d1
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-05-11T09:55:48.928+02:00  INFO 28664 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 10.376 seconds (process running for 11.02)
-2025-05-11T09:55:49.063+02:00  INFO 28664 --- [todo-list-web] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-11T10:00:18.829+02:00  INFO 8216 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 8216 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T10:00:18.833+02:00  INFO 8216 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T10:00:21.359+02:00  INFO 8216 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T10:00:21.359+02:00  INFO 8216 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T10:00:21.472+02:00  INFO 8216 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T10:00:21.930+02:00  INFO 8216 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T10:00:22.104+02:00  INFO 8216 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T10:00:22.154+02:00  INFO 8216 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T10:00:22.565+02:00  INFO 8216 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T10:00:23.104+02:00  INFO 8216 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: d0bbdb57-e864-4cec-b3ab-2f70cb02ccf2
-2025-05-11T10:00:23.107+02:00  INFO 8216 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T10:00:24.471+02:00  INFO 8216 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T10:00:28.261+02:00  INFO 8216 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 10.118 seconds (process running for 10.769)
-2025-05-11T10:00:33.373+02:00  INFO 8216 --- [todo-list-web] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-11T10:02:00.753+02:00  INFO 29108 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 29108 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T10:02:00.753+02:00  INFO 29108 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T10:02:03.349+02:00  INFO 29108 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T10:02:03.349+02:00  INFO 29108 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T10:02:03.454+02:00  INFO 29108 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T10:02:04.015+02:00  INFO 29108 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T10:02:04.134+02:00  INFO 29108 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T10:02:04.185+02:00  INFO 29108 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T10:02:04.612+02:00  INFO 29108 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T10:02:05.173+02:00  INFO 29108 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 63266cae-394c-41e3-8abf-961bebf01bd1
-2025-05-11T10:02:05.177+02:00  INFO 29108 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T10:02:06.523+02:00  INFO 29108 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T10:02:10.472+02:00  INFO 29108 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 10.419 seconds (process running for 11.062)
-2025-05-11T10:02:15.749+02:00  INFO 29108 --- [todo-list-web] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-11T10:04:07.080+02:00  INFO 25836 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 25836 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T10:04:07.084+02:00  INFO 25836 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T10:04:09.709+02:00  INFO 25836 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T10:04:09.710+02:00  INFO 25836 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T10:04:09.829+02:00  INFO 25836 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T10:04:10.232+02:00  INFO 25836 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T10:04:10.360+02:00  INFO 25836 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T10:04:10.417+02:00  INFO 25836 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T10:04:10.845+02:00  INFO 25836 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T10:04:11.354+02:00  INFO 25836 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: f2d78f1b-4ade-459c-ba50-c5d02839c37f
-2025-05-11T10:04:11.356+02:00  INFO 25836 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T10:04:12.789+02:00  INFO 25836 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T10:04:16.767+02:00  INFO 25836 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 10.437 seconds (process running for 11.106)
-2025-05-11T10:04:19.909+02:00  INFO 25836 --- [todo-list-web] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-11T10:11:18.913+02:00  INFO 29636 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 29636 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T10:11:18.917+02:00  INFO 29636 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T10:11:21.432+02:00  INFO 29636 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T10:11:21.432+02:00  INFO 29636 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T10:11:21.544+02:00  INFO 29636 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T10:11:22.010+02:00  INFO 29636 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T10:11:22.151+02:00  INFO 29636 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T10:11:22.201+02:00  INFO 29636 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T10:11:22.642+02:00  INFO 29636 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T10:11:23.202+02:00  INFO 29636 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 5b46cde0-93dc-46fc-a8d7-2d115c73ef21
-2025-05-11T10:11:23.208+02:00  INFO 29636 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T10:11:24.614+02:00  INFO 29636 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T10:11:28.238+02:00  INFO 29636 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 10.079 seconds (process running for 10.749)
-2025-05-11T10:11:34.186+02:00  INFO 29636 --- [todo-list-web] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-11T10:11:48.562+02:00  INFO 29636 --- [todo-list-web] [AWT-EventQueue-0] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-05-11T10:11:48.562+02:00  INFO 29636 --- [todo-list-web] [AWT-EventQueue-0] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-05-11T10:22:21.432+02:00  INFO 15480 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 15480 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T10:22:21.437+02:00  INFO 15480 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T10:22:24.001+02:00  INFO 15480 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T10:22:24.002+02:00  INFO 15480 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T10:22:24.105+02:00  INFO 15480 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T10:22:24.607+02:00  INFO 15480 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T10:22:24.721+02:00  INFO 15480 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T10:22:24.775+02:00  INFO 15480 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T10:22:25.208+02:00  INFO 15480 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T10:22:25.798+02:00  INFO 15480 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: bcb08a49-7ed2-4612-9cf8-4067c05f2202
-2025-05-11T10:22:25.802+02:00  INFO 15480 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T10:22:27.202+02:00  INFO 15480 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T10:22:30.551+02:00  WARN 15480 --- [todo-list-web] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
-2025-05-11T10:22:30.562+02:00  INFO 15480 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-05-11T10:22:30.573+02:00  INFO 15480 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-05-11T10:22:30.631+02:00 ERROR 15480 --- [todo-list-web] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Web server failed to start. Port 8080 was already in use.
-
-Action:
-
-Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
-
-2025-05-11T10:22:42.843+02:00  INFO 37776 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 37776 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T10:22:42.848+02:00  INFO 37776 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T10:22:45.435+02:00  INFO 37776 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T10:22:45.435+02:00  INFO 37776 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T10:22:45.560+02:00  INFO 37776 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T10:22:46.122+02:00  INFO 37776 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T10:22:46.224+02:00  INFO 37776 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T10:22:46.274+02:00  INFO 37776 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T10:22:46.724+02:00  INFO 37776 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T10:22:47.260+02:00  INFO 37776 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: aa7e4903-1b57-46f2-8e6f-7f750b0a4611
-2025-05-11T10:22:47.263+02:00  INFO 37776 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T10:22:48.657+02:00  INFO 37776 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T10:22:52.031+02:00  INFO 37776 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 9.93 seconds (process running for 10.622)
-2025-05-11T10:22:56.715+02:00  INFO 37776 --- [todo-list-web] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-11T10:24:07.329+02:00  INFO 10260 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 10260 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T10:24:07.333+02:00  INFO 10260 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T10:24:09.838+02:00  INFO 10260 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T10:24:09.839+02:00  INFO 10260 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T10:24:09.945+02:00  INFO 10260 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T10:24:10.412+02:00  INFO 10260 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T10:24:10.540+02:00  INFO 10260 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T10:24:10.604+02:00  INFO 10260 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T10:24:11.080+02:00  INFO 10260 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T10:24:11.640+02:00  INFO 10260 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: fbe20b4b-d3a1-4db3-a234-981c9d5ac307
-2025-05-11T10:24:11.643+02:00  INFO 10260 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T10:24:13.048+02:00  INFO 10260 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T10:24:16.733+02:00  INFO 10260 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 10.129 seconds (process running for 10.782)
-2025-05-11T10:24:20.633+02:00  INFO 10260 --- [todo-list-web] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-11T10:29:11.025+02:00  INFO 32104 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 32104 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T10:29:11.029+02:00  INFO 32104 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T10:29:13.561+02:00  INFO 32104 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T10:29:13.561+02:00  INFO 32104 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T10:29:13.664+02:00  INFO 32104 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T10:29:14.122+02:00  INFO 32104 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T10:29:14.247+02:00  INFO 32104 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T10:29:14.296+02:00  INFO 32104 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T10:29:14.721+02:00  INFO 32104 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T10:29:15.279+02:00  INFO 32104 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 851747b0-1d60-4d96-a248-e034a059cd9d
-2025-05-11T10:29:15.287+02:00  INFO 32104 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T10:29:16.709+02:00  INFO 32104 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T10:29:20.254+02:00  INFO 32104 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 9.984 seconds (process running for 10.655)
-2025-05-11T10:29:28.111+02:00  INFO 32104 --- [todo-list-web] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-11T10:33:13.788+02:00  INFO 33984 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 33984 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T10:33:13.792+02:00  INFO 33984 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T10:33:16.489+02:00  INFO 33984 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T10:33:16.490+02:00  INFO 33984 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T10:33:16.590+02:00  INFO 33984 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T10:33:17.114+02:00  INFO 33984 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T10:33:17.225+02:00  INFO 33984 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T10:33:17.312+02:00  INFO 33984 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T10:33:17.722+02:00  INFO 33984 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T10:33:18.283+02:00  INFO 33984 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 3d56cb26-91aa-4e54-8a9e-97e249bd9b35
-2025-05-11T10:33:18.289+02:00  INFO 33984 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T10:33:19.710+02:00  INFO 33984 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T10:33:23.178+02:00  INFO 33984 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 10.116 seconds (process running for 10.798)
-2025-05-11T10:33:34.751+02:00  INFO 33984 --- [todo-list-web] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-11T10:35:23.342+02:00  INFO 34784 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 34784 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T10:35:23.346+02:00  INFO 34784 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T10:35:25.900+02:00  INFO 34784 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T10:35:25.901+02:00  INFO 34784 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-05-11T10:35:26.011+02:00  INFO 34784 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T10:35:26.496+02:00  INFO 34784 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T10:35:26.602+02:00  INFO 34784 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-11T10:35:26.651+02:00  INFO 34784 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T10:35:27.133+02:00  INFO 34784 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T10:35:27.632+02:00  INFO 34784 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: cefaec55-d94a-4bda-8bcf-df2cfac3a973
-2025-05-11T10:35:27.635+02:00  INFO 34784 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T10:35:29.082+02:00  INFO 34784 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T10:35:32.946+02:00  INFO 34784 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 10.341 seconds (process running for 11.038)
-2025-05-11T10:35:39.876+02:00  INFO 34784 --- [todo-list-web] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-11T10:43:45.849+02:00  INFO 34784 --- [todo-list-web] [AWT-EventQueue-0] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-05-11T10:43:45.857+02:00  INFO 34784 --- [todo-list-web] [AWT-EventQueue-0] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-05-11T11:00:29.812+02:00  INFO 15844 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 15844 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T11:00:29.815+02:00  INFO 15844 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T11:00:32.026+02:00  INFO 15844 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T11:00:32.027+02:00  INFO 15844 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-05-11T11:00:32.130+02:00  INFO 15844 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T11:00:32.509+02:00  INFO 15844 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T11:00:32.594+02:00  INFO 15844 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-05-11T11:00:32.640+02:00  INFO 15844 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T11:00:33.061+02:00  INFO 15844 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T11:00:33.434+02:00  INFO 15844 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 577e9d65-42f0-44e2-bc89-0922715a8355
-2025-05-11T11:00:33.437+02:00  INFO 15844 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T11:00:33.560+02:00  INFO 15844 --- [todo-list-web] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-05-14T08:25:07.503+02:00  INFO 20284 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 20284 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
+2025-05-14T08:25:07.516+02:00  INFO 20284 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
+2025-05-14T08:25:10.449+02:00  INFO 20284 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-14T08:25:10.450+02:00  INFO 20284 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-14T08:25:10.575+02:00  INFO 20284 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-14T08:25:11.153+02:00  INFO 20284 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-14T08:25:11.278+02:00  INFO 20284 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-05-14T08:25:11.359+02:00  INFO 20284 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-14T08:25:12.007+02:00  INFO 20284 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-14T08:25:12.513+02:00  INFO 20284 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 58219eec-164a-451a-bb60-ecd6aa6e78bc
+2025-05-14T08:25:12.518+02:00  INFO 20284 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-14T08:25:12.705+02:00  INFO 20284 --- [todo-list-web] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.0
@@ -487,23 +17,21 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-05-11T11:00:34.623+02:00  INFO 15844 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T11:00:37.639+02:00  INFO 15844 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 8.455 seconds (process running for 9.038)
-2025-05-11T11:00:48.387+02:00  INFO 15844 --- [todo-list-web] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-11T11:02:27.489+02:00  INFO 15844 --- [todo-list-web] [AWT-EventQueue-0] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-05-11T11:02:27.495+02:00  INFO 15844 --- [todo-list-web] [AWT-EventQueue-0] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-05-11T11:02:33.777+02:00  INFO 37248 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 37248 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T11:02:33.780+02:00  INFO 37248 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T11:02:35.604+02:00  INFO 37248 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T11:02:35.604+02:00  INFO 37248 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-05-11T11:02:35.687+02:00  INFO 37248 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T11:02:36.040+02:00  INFO 37248 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T11:02:36.108+02:00  INFO 37248 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-05-11T11:02:36.144+02:00  INFO 37248 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T11:02:36.535+02:00  INFO 37248 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T11:02:36.871+02:00  INFO 37248 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 8cc1fea1-070a-4776-a2ad-1fe49a11a492
-2025-05-11T11:02:36.874+02:00  INFO 37248 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T11:02:36.973+02:00  INFO 37248 --- [todo-list-web] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-05-14T08:25:14.116+02:00  INFO 20284 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-14T08:25:18.624+02:00  INFO 20284 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 11.959 seconds (process running for 12.627)
+2025-05-14T08:25:30.358+02:00  INFO 20284 --- [todo-list-web] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-14T08:28:57.133+02:00  INFO 9548 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 9548 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
+2025-05-14T08:28:57.137+02:00  INFO 9548 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
+2025-05-14T08:29:00.035+02:00  INFO 9548 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-14T08:29:00.035+02:00  INFO 9548 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-14T08:29:00.149+02:00  INFO 9548 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-14T08:29:00.671+02:00  INFO 9548 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-14T08:29:00.765+02:00  INFO 9548 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-05-14T08:29:00.816+02:00  INFO 9548 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-14T08:29:01.461+02:00  INFO 9548 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-14T08:29:01.911+02:00  INFO 9548 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 56bde067-7b39-4f7e-9e3a-84b39f44505a
+2025-05-14T08:29:01.915+02:00  INFO 9548 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-14T08:29:02.129+02:00  INFO 9548 --- [todo-list-web] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.0
@@ -511,21 +39,21 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-05-11T11:02:37.974+02:00  INFO 37248 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T11:02:40.830+02:00  INFO 37248 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 7.677 seconds (process running for 8.197)
-2025-05-11T11:02:45.615+02:00  INFO 37248 --- [todo-list-web] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-11T11:03:41.416+02:00  INFO 25212 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 25212 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T11:03:41.419+02:00  INFO 25212 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T11:03:43.316+02:00  INFO 25212 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T11:03:43.317+02:00  INFO 25212 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-05-11T11:03:43.407+02:00  INFO 25212 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T11:03:43.737+02:00  INFO 25212 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T11:03:43.798+02:00  INFO 25212 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-05-11T11:03:43.838+02:00  INFO 25212 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T11:03:44.251+02:00  INFO 25212 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T11:03:44.589+02:00  INFO 25212 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: a1e6de41-6aa6-424e-8c55-1218c84668c7
-2025-05-11T11:03:44.591+02:00  INFO 25212 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T11:03:44.694+02:00  INFO 25212 --- [todo-list-web] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-05-14T08:29:03.469+02:00  INFO 9548 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-14T08:29:07.616+02:00  INFO 9548 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 11.316 seconds (process running for 11.946)
+2025-05-14T08:29:12.939+02:00  INFO 9548 --- [todo-list-web] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-14T09:18:05.408+02:00  INFO 4192 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 4192 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
+2025-05-14T09:18:05.411+02:00  INFO 4192 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
+2025-05-14T09:18:08.079+02:00  INFO 4192 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-14T09:18:08.080+02:00  INFO 4192 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-14T09:18:08.180+02:00  INFO 4192 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-14T09:18:08.827+02:00  INFO 4192 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-14T09:18:08.908+02:00  INFO 4192 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-05-14T09:18:08.966+02:00  INFO 4192 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-14T09:18:09.585+02:00  INFO 4192 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-14T09:18:10.084+02:00  INFO 4192 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 9c16d9ef-4308-41e4-9be9-81c75f1d0979
+2025-05-14T09:18:10.086+02:00  INFO 4192 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-14T09:18:10.268+02:00  INFO 4192 --- [todo-list-web] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.0
@@ -533,21 +61,21 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-05-11T11:03:45.686+02:00  INFO 25212 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T11:03:48.574+02:00  INFO 25212 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 7.813 seconds (process running for 8.324)
-2025-05-11T11:03:54.759+02:00  INFO 25212 --- [todo-list-web] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-11T11:04:18.868+02:00  INFO 480 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 480 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T11:04:18.871+02:00  INFO 480 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T11:04:20.659+02:00  INFO 480 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T11:04:20.659+02:00  INFO 480 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-05-11T11:04:20.723+02:00  INFO 480 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T11:04:21.076+02:00  INFO 480 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T11:04:21.151+02:00  INFO 480 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-05-11T11:04:21.196+02:00  INFO 480 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T11:04:21.610+02:00  INFO 480 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T11:04:21.951+02:00  INFO 480 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 88fdb444-44f6-4c4b-a2ec-7e6e39a446b7
-2025-05-11T11:04:21.953+02:00  INFO 480 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T11:04:22.026+02:00  INFO 480 --- [todo-list-web] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-05-14T09:18:11.635+02:00  INFO 4192 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-14T09:18:15.863+02:00  INFO 4192 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 11.269 seconds (process running for 11.886)
+2025-05-14T09:18:15.970+02:00  INFO 4192 --- [todo-list-web] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-14T09:23:55.787+02:00  INFO 5884 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 5884 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
+2025-05-14T09:23:55.790+02:00  INFO 5884 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
+2025-05-14T09:23:58.604+02:00  INFO 5884 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-14T09:23:58.605+02:00  INFO 5884 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-14T09:23:58.715+02:00  INFO 5884 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-14T09:23:59.181+02:00  INFO 5884 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-14T09:23:59.281+02:00  INFO 5884 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-05-14T09:23:59.337+02:00  INFO 5884 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-14T09:23:59.921+02:00  INFO 5884 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-14T09:24:00.408+02:00  INFO 5884 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 0f0ee9d1-3c4a-4dbb-9fff-cc2555e03db4
+2025-05-14T09:24:00.410+02:00  INFO 5884 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-14T09:24:00.573+02:00  INFO 5884 --- [todo-list-web] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.0
@@ -555,21 +83,21 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-05-11T11:04:23.022+02:00  INFO 480 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T11:04:25.478+02:00  INFO 480 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 7.188 seconds (process running for 7.663)
-2025-05-11T11:04:28.447+02:00  INFO 480 --- [todo-list-web] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-11T11:04:53.263+02:00  INFO 1164 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 1164 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T11:04:53.265+02:00  INFO 1164 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T11:04:55.137+02:00  INFO 1164 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T11:04:55.137+02:00  INFO 1164 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-05-11T11:04:55.218+02:00  INFO 1164 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T11:04:55.554+02:00  INFO 1164 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T11:04:55.616+02:00  INFO 1164 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-05-11T11:04:55.657+02:00  INFO 1164 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T11:04:56.095+02:00  INFO 1164 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T11:04:56.426+02:00  INFO 1164 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 01160511-4b67-4afa-8cdf-13eb92c8d489
-2025-05-11T11:04:56.429+02:00  INFO 1164 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T11:04:56.535+02:00  INFO 1164 --- [todo-list-web] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-05-14T09:24:01.867+02:00  INFO 5884 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-14T09:24:05.901+02:00  INFO 5884 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 10.94 seconds (process running for 11.605)
+2025-05-14T09:24:11.965+02:00  INFO 5884 --- [todo-list-web] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-14T09:30:31.104+02:00  INFO 32964 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 32964 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
+2025-05-14T09:30:31.109+02:00  INFO 32964 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
+2025-05-14T09:30:33.982+02:00  INFO 32964 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-14T09:30:33.983+02:00  INFO 32964 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-14T09:30:34.076+02:00  INFO 32964 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-14T09:30:34.561+02:00  INFO 32964 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-14T09:30:34.660+02:00  INFO 32964 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-05-14T09:30:34.708+02:00  INFO 32964 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-14T09:30:35.366+02:00  INFO 32964 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-14T09:30:35.846+02:00  INFO 32964 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 12192fc2-a568-4add-941b-9bac70c2b8c5
+2025-05-14T09:30:35.848+02:00  INFO 32964 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-14T09:30:36.046+02:00  INFO 32964 --- [todo-list-web] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.0
@@ -577,140 +105,6 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-05-11T11:04:57.505+02:00  INFO 1164 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T11:05:00.424+02:00  INFO 1164 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 7.809 seconds (process running for 8.332)
-2025-05-11T11:05:00.645+02:00  INFO 1164 --- [todo-list-web] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-11T11:05:49.653+02:00  INFO 18920 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 18920 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T11:05:49.655+02:00  INFO 18920 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T11:05:51.471+02:00  INFO 18920 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T11:05:51.472+02:00  INFO 18920 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-05-11T11:05:51.554+02:00  INFO 18920 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T11:05:51.913+02:00  INFO 18920 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T11:05:51.975+02:00  INFO 18920 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-05-11T11:05:52.010+02:00  INFO 18920 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T11:05:52.419+02:00  INFO 18920 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T11:05:52.762+02:00  INFO 18920 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 153c4782-00bd-4432-bac6-fb8b0b5aca85
-2025-05-11T11:05:52.764+02:00  INFO 18920 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T11:05:52.865+02:00  INFO 18920 --- [todo-list-web] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 16.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-05-11T11:05:53.868+02:00  INFO 18920 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T11:05:57.021+02:00  INFO 18920 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 7.977 seconds (process running for 8.51)
-2025-05-11T11:05:57.614+02:00  INFO 18920 --- [todo-list-web] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-11T11:08:55.081+02:00  INFO 29860 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 29860 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T11:08:55.085+02:00  INFO 29860 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T11:08:56.925+02:00  INFO 29860 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T11:08:56.926+02:00  INFO 29860 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-05-11T11:08:57.011+02:00  INFO 29860 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T11:08:57.361+02:00  INFO 29860 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T11:08:57.427+02:00  INFO 29860 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-05-11T11:08:57.470+02:00  INFO 29860 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T11:08:57.904+02:00  INFO 29860 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T11:08:58.246+02:00  INFO 29860 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 728e952f-c431-469b-80c0-2bb11e89507d
-2025-05-11T11:08:58.248+02:00  INFO 29860 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T11:08:58.351+02:00  INFO 29860 --- [todo-list-web] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 16.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-05-11T11:08:59.344+02:00  INFO 29860 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T11:09:02.177+02:00  INFO 29860 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 7.745 seconds (process running for 8.275)
-2025-05-11T11:09:02.257+02:00  INFO 29860 --- [todo-list-web] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-11T11:09:58.050+02:00  INFO 27924 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 27924 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T11:09:58.054+02:00  INFO 27924 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T11:10:04.262+02:00  INFO 16412 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 16412 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T11:10:04.266+02:00  INFO 16412 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T11:10:06.093+02:00  INFO 16412 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T11:10:06.093+02:00  INFO 16412 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-05-11T11:10:06.174+02:00  INFO 16412 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T11:10:06.511+02:00  INFO 16412 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T11:10:06.579+02:00  INFO 16412 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-05-11T11:10:06.616+02:00  INFO 16412 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T11:10:07.033+02:00  INFO 16412 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T11:10:07.361+02:00  INFO 16412 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 279e855d-832a-4290-9b40-6709cce20a54
-2025-05-11T11:10:07.363+02:00  INFO 16412 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T11:10:07.476+02:00  INFO 16412 --- [todo-list-web] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 16.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-05-11T11:10:08.473+02:00  INFO 16412 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T11:10:11.785+02:00  INFO 16412 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 8.161 seconds (process running for 8.716)
-2025-05-11T11:10:12.200+02:00  INFO 16412 --- [todo-list-web] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-11T11:11:18.817+02:00  INFO 21124 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 21124 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T11:11:18.819+02:00  INFO 21124 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T11:11:20.729+02:00  INFO 21124 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T11:11:20.729+02:00  INFO 21124 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-05-11T11:11:20.810+02:00  INFO 21124 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T11:11:21.139+02:00  INFO 21124 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T11:11:21.206+02:00  INFO 21124 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-05-11T11:11:21.243+02:00  INFO 21124 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T11:11:21.663+02:00  INFO 21124 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T11:11:22.007+02:00  INFO 21124 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 02ad8007-0910-41b6-9b89-2bd943ca0171
-2025-05-11T11:11:22.010+02:00  INFO 21124 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T11:11:22.116+02:00  INFO 21124 --- [todo-list-web] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 16.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-05-11T11:11:23.121+02:00  INFO 21124 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T11:11:26.013+02:00  INFO 21124 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 7.818 seconds (process running for 8.333)
-2025-05-11T11:11:26.667+02:00  INFO 21124 --- [todo-list-web] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-11T11:12:06.353+02:00  INFO 35916 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 35916 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T11:12:06.357+02:00  INFO 35916 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T11:12:08.193+02:00  INFO 35916 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T11:12:08.194+02:00  INFO 35916 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-05-11T11:12:08.279+02:00  INFO 35916 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T11:12:08.614+02:00  INFO 35916 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T11:12:08.678+02:00  INFO 35916 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-05-11T11:12:08.716+02:00  INFO 35916 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T11:12:09.154+02:00  INFO 35916 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T11:12:09.485+02:00  INFO 35916 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 5922e03b-2e16-442d-ae2d-2da177b72866
-2025-05-11T11:12:09.487+02:00  INFO 35916 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T11:12:09.562+02:00  INFO 35916 --- [todo-list-web] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 16.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-05-11T11:12:10.546+02:00  INFO 35916 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T11:12:13.206+02:00  INFO 35916 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 7.49 seconds (process running for 8.02)
-2025-05-11T11:12:13.273+02:00  INFO 35916 --- [todo-list-web] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-11T11:12:47.526+02:00  INFO 26836 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Starting ToDoListWeb using Java 23.0.1 with PID 26836 (C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login\target\classes started by andre in C:\Users\andre\Documents\eclipse.workspace\spring-projekte\user-login)
-2025-05-11T11:12:47.529+02:00  INFO 26836 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : The following 1 profile is active: "prod"
-2025-05-11T11:12:49.429+02:00  INFO 26836 --- [todo-list-web] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-11T11:12:49.430+02:00  INFO 26836 --- [todo-list-web] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-05-11T11:12:49.514+02:00  INFO 26836 --- [todo-list-web] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-11T11:12:49.869+02:00  INFO 26836 --- [todo-list-web] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-11T11:12:49.940+02:00  INFO 26836 --- [todo-list-web] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-05-11T11:12:49.981+02:00  INFO 26836 --- [todo-list-web] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-11T11:12:50.398+02:00  INFO 26836 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-11T11:12:50.726+02:00  INFO 26836 --- [todo-list-web] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: c33174f1-0104-4fa1-a217-ecb4cbff04ef
-2025-05-11T11:12:50.727+02:00  INFO 26836 --- [todo-list-web] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-11T11:12:50.837+02:00  INFO 26836 --- [todo-list-web] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 16.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-05-11T11:12:51.821+02:00  INFO 26836 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-11T11:12:54.920+02:00  INFO 26836 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 8.024 seconds (process running for 8.556)
-2025-05-11T11:12:55.040+02:00  INFO 26836 --- [todo-list-web] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-14T09:30:37.355+02:00  INFO 32964 --- [todo-list-web] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-14T09:30:41.456+02:00  INFO 32964 --- [todo-list-web] [main] todolistweb.ToDoListWeb                  : Started ToDoListWeb in 11.154 seconds (process running for 11.819)
+2025-05-14T09:30:45.285+02:00  INFO 32964 --- [todo-list-web] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'

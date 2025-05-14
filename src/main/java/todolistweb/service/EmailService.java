@@ -14,6 +14,9 @@ import org.thymeleaf.context.Context;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 
+/** E-Mail Serviceklasse für den Versand von E-Mails.
+ *  die Methoden befüllen E-Mail-Templates mit den entsprechenden Daten und versenden die E-Mails.
+ */
 @Service
 public class EmailService {
 
@@ -23,6 +26,13 @@ public class EmailService {
 	@Autowired
 	private TemplateEngine templateEngine;
 
+	/** Reset-Passwort Mail
+	 * @param to
+	 * @param username
+	 * @param token
+	 * @param expiryDateTime
+	 * @throws MessagingException
+	 */
 	public void sendResetPassword(String to, String username, String token, LocalDateTime expiryDateTime)
 			throws MessagingException {
 		String subject = "Passwort zurücksetzen";
@@ -46,6 +56,13 @@ public class EmailService {
 		mailSender.send(message);
 	}
 
+	/** Neu-User Verification Mail
+	 * @param to
+	 * @param username
+	 * @param token
+	 * @param expiryDateTime
+	 * @throws MessagingException
+	 */
 	public void sendVerificationEmail(String to, String username, String token, LocalDateTime expiryDateTime)
 			throws MessagingException {
 		String subject = "Bitte bestätige deine E-Mail-Adresse";

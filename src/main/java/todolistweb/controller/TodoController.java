@@ -19,6 +19,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+/** ToDoController
+ *  Controller for managing ToDo items.
+ *  Provides endpoints for listing, adding, completing,
+ *  and deleting ToDo items.
+ */
 @Controller
 @RequestMapping("/todos")
 public class TodoController {

@@ -2,6 +2,12 @@ package todolistweb.dto;
 
 import jakarta.validation.constraints.NotEmpty;
 
+/** DTO für die Benutzeranmeldung.
+ *  
+ *  @author Andreas Fischer
+ *  @version 1.0
+ *  @since 2025-05-10
+ */
 public class UserLoginDto {
 
 	@NotEmpty(message = "Benutzername darf nicht leer sein")

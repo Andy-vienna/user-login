@@ -5,6 +5,9 @@ import todolistweb.dto.UserRegistrationDto;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
+/** PasswordMatchingValidator
+ *  Prüfer um zu prüfen, ob die eingegebenen Passwörter übereinstimmen.
+ */
 public class PasswordMatchesValidator implements ConstraintValidator<PasswordMatches, UserRegistrationDto> {
 
 	@Override

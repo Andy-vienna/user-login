@@ -9,6 +9,18 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+/** UserDetailServiceImpl ist eine Implementierung von UserDetailsService, die Benutzerdaten
+ *  aus einer Datenbank lädt.
+ *  Diese Klasse wird von Spring Security verwendet, um Benutzerdaten zu laden und
+ *  zu authentifizieren.
+ *  Sie implementiert die Methode loadUserByUsername, die einen Benutzernamen
+ *  *  entgegennimmt und die zugehörigen Benutzerdaten zurückgibt.
+ *  *  @author Andreas Fischer
+ *  *  @version 1.0
+ *  *  @since 2025-05-12
+ *  *  Diese Klasse ist Teil des ToDoListWeb-Projekts, das eine Webanwendung
+ *  *  zur Verwaltung von Aufgaben und Projekten bereitstellt.
+ */
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 

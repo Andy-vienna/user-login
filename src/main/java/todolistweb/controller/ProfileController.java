@@ -18,6 +18,12 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 
+/** ProfileController
+ *  Controller for managing user profiles.
+ *  Provides endpoints for displaying and updating user profiles,
+ *  changing passwords,
+ *  and handling profile-related actions.
+ */
 @Controller
 @RequestMapping("/profile")
 public class ProfileController {

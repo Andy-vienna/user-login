@@ -12,6 +12,14 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
+/** Spring Security Konfiguration für die Webanwendung.
+ *  *  @author Andreas Fischer
+ *  *  @version 1.0
+ *  *  @since 2025-05-10
+ *  *  @Configuration ist eine Annotation, die angibt, dass diese Klasse eine Konfigurationsklasse ist.
+ *  *  *  @EnableWebSecurity ist eine Annotation, die angibt, dass die Web-Sicherheit aktiviert ist.
+ *  *  *  @Autowired ist eine Annotation, die angibt, dass die Abhängigkeit automatisch injiziert werden soll.
+ */
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {

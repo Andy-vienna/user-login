@@ -12,6 +12,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+/** AdminController
+ *  Controller for managing users in the application.
+ *  Provides endpoints for deleting, enabling, disabling users and toggling user roles.
+ */
 @Controller
 public class AdminController {
 

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>ToDoList-Web</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-	<link rel="icon" href="/favicon.ico?v=1" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?v=1" type="image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -12,389 +13,196 @@
             padding: 0;
             background-color: #f7fafc;
         }
-        .header {
-            background-color: #2b6cb0;
-            color: white;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .header .left {
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        .header .right a {
-            color: white;
-            margin-left: 1rem;
-            text-decoration: none;
-            font-weight: 500;
-        }
+
         .main-content {
             padding: 2rem;
             max-width: 1000px;
             margin: 0 auto;
         }
+
         h2 {
             color: #2d3748;
             margin-bottom: 1rem;
         }
-        table {
+
+        .todo-item {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .todo-left, .todo-middle, .todo-right {
+            flex: 1 1 30%;
+        }
+
+        .todo-middle {
+            flex: 2;
             width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
         }
-        th, td {
-            text-align: left;
-            padding: 0.75rem;
-            border-bottom: 1px solid #e2e8f0;
+
+        .todo-middle textarea {
+            width: 100%;
+            resize: vertical;
+            box-sizing: border-box;
         }
-        th {
-            background-color: #edf2f7;
+
+        .todo-right {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
         }
+
+        .todo-right form {
+            margin: 0;
+        }
+
         .button {
-            background-color: #3182ce;
-            color: white;
             padding: 0.4rem 0.8rem;
-            border: none;
-            border-radius: 6px;
             font-size: 0.85rem;
+            border-radius: 6px;
+            border: none;
             cursor: pointer;
         }
+
+        .btn-success {
+            background-color: #38a169;
+            color: white;
+        }
+
         .delete-button {
             background-color: #e53e3e;
-            margin-left: 0.3rem;
+            color: white;
         }
-        .enable-button {
-            background-color: #38a169;
-            margin-left: 0.3rem;
-        }
-        pre {
-            background-color: #f1f5f9;
+
+        .todo-card {
+            margin-bottom: 1rem;
             padding: 1rem;
-            border-radius: 6px;
-            white-space: pre-wrap;
-            max-height: 400px;
-            overflow-y: auto;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
-		.todo-form {
-		    margin-top: 15px;
-		}
+        .todo-open {
+            background-color: #fff5f5;
+            border-left: 4px solid #e53e3e;
+        }
 
-		.todo-form input[type="text"] {
-		    padding: 5px;
-			border-radius: 6px;
-		    width: 80%;
-		}
+        .todo-done {
+            background-color: #f0fff4;
+            border-left: 4px solid #38a169;
+        }
 
-		.todo-form button {
-		    padding: 5px 10px;
-		}
+        .tab-buttons {
+            margin: 1rem 0;
+        }
+
+        .tab-buttons button {
+            margin-right: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: #e2e8f0;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .tab-buttons button[aria-selected="true"] {
+            background-color: #2b6cb0;
+            color: white;
+        }
 		
-		.btn-new button {
-		    background-color: #f8d7da; /* Bootstrap danger background */
-		    padding: 10px;
-		    border-radius: 6px;
-		    margin-bottom: 8px;
-		}
+		@media (max-width: 768px) {
+		    .todo-left,
+		    .todo-middle,
+		    .todo-right {
+		        flex: 1 1 100%;
+		    }
 
-		.btn-success button {
-		    background-color: #d4edda; /* Bootstrap success background */
-		    padding: 10px;
-		    border-radius: 6px;
-		    margin-bottom: 8px;
-		}
-		
-		.visually-hidden {
-		    position: absolute;
-		    left: -9999px;
-		    top: auto;
-		    width: 1px;
-		    height: 1px;
-		    overflow: hidden;
-		}
+		    .todo-right {
+		        justify-content: flex-start;
+		    }
 
-		.todo-card {
-		    margin-bottom: 1rem;
-		    padding: 1rem;
-		    border-radius: 8px;
-		    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-		}
-
-		.todo-open {
-		    background-color: #fff5f5; /* hellrot, wie bei Bootstrap danger-100 */
-		    border-left: 4px solid #e53e3e;
-		}
-
-		.todo-done {
-		    border-left: 4px solid #38a169;
-		    background-color: #f0fff4;
-		    color: #4a5568;
-		}
-
-		.todo-item {
-		    display: flex;
-		    justify-content: space-between;
-		    align-items: start;
-		    gap: 1rem;
-		}
-
-		.todo-meta {
-		    font-size: 0.85rem;
-		    color: #4a5568;
-		    margin-top: 0.5rem;
-		}
-		
-		ul.todo-list {
-		    display: grid;
-		    gap: 1rem;
-		    padding: 0;
-		    list-style: none;
-		}
-		
-		textarea {
-		    width: 100%;
-		    max-width: 100%;
-		    padding: 6px;
-		    border-radius: 4px;
-		    border: 1px solid #cbd5e0;
-		    font-family: inherit;
-		    font-size: 0.95rem;
-		}
-		
-		.todo-form-row {
-		    display: flex;
-		    gap: 1rem;
-		    align-items: flex-start;
-		    justify-content: space-between;
-		    width: 100%;
-		}
-
-		.todo-left {
-		    flex: 3;
-		    min-width: 200px;
-		}
-
-		.todo-middle {
-		    flex: 2;
-		    max-width: 300px;
-		}
-
-		.todo-middle textarea {
-		    width: 100%;
-		    padding: 6px;
-		    border-radius: 4px;
-		    border: 1px solid #cbd5e0;
-		    font-family: inherit;
-		    font-size: 0.95rem;
-		}
-
-		.todo-right {
-		    display: flex;
-		    align-items: center;
-		    margin-left: 0.5rem; /* fügt Abstand zum Kommentarfeld hinzu */
-		}
-
-		.todo-right button {
-		    white-space: nowrap;
-		}
-		
-		.tab-buttons button {
-		    margin-right: 0.5rem;
-		    padding: 0.5rem 1rem;
-		    border: none;
-		    background-color: #e2e8f0;
-		    cursor: pointer;
-		    border-radius: 5px;
-		}
-		.tab-buttons button[aria-selected="true"] {
-		    background-color: #2b6cb0;
-		    color: white;
-		}
-		
-		.delete-button {
-		    background-color: #e53e3e;
-		    color: white;
-		    padding: 0.4rem 0.8rem;
-		    border: none;
-		    border-radius: 6px;
-		    font-size: 0.85rem;
-		    cursor: pointer;
+		    .todo-middle textarea {
+		        width: 100%;
+		    }
 		}
     </style>
 </head>
 <body>
-<div class="header">
-    <div class="left">
-        Willkommen <span sec:authentication="name"></span>
-    </div>
-    <div class="right">
-        <a th:href="@{/profile}">Profil</a>
-        <a th:href="@{/profile/password}">Passwort ändern</a>
-        <a th:href="@{/logout}">Logout</a>
-    </div>
-</div>
-
 <div class="main-content">
+    <section aria-labelledby="todo-heading">
+        <h2 id="todo-heading">Deine ToDo-Liste</h2>
 
-    <!-- Inhalt für Admin -->
-    <div sec:authorize="hasRole('ADMIN')">
-        <h2>Benutzerverwaltung</h2>
-        <table>
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Benutzername</th>
-                <th>E-Mail</th>
-                <th>Rolle</th>
-				<th>Rollenwechsel</th>
-                <th>Aktiv</th>
-                <th>Aktion</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="user : ${users}">
-                <td th:text="${user.id}"></td>
-                <td th:text="${user.username}"></td>
-                <td th:text="${user.email}"></td>
-                <td th:text="${user.roles}"></td>
-				<td>
-					<form th:action="@{'/admin/user/' + ${user.id} + '/toggle-role'}" method="post"
-						th:if="${user.username != loggedInUser}">
-							<button type="submit" class="login-btn"
-								th:text="${user.roles.contains('ADMIN')} ? 'Zum User' : 'Zum Admin'">
-							</button>
-					</form>
-					<span th:if="${user.username == loggedInUser}">-</span>
-				</td>
-                <td th:text="${user.enabled} ? 'Ja' : 'Nein'"></td>
-                <td>
-                    <div th:if="${user.enabled} and ${user.username} != ${#authentication.name}">
-                        <form th:action="@{'/admin/user/' + ${user.id} + '/disable'}" method="post" style="display:inline;">
-                            <button type="submit" class="button">Deaktivieren</button>
-                        </form>
+        <div class="tab-buttons" role="tablist" aria-label="Aufgabenansicht">
+            <button role="tab" id="tab-open" onclick="showTab('open')" aria-selected="true">Offen</button>
+            <button role="tab" id="tab-done" onclick="showTab('done')" aria-selected="false">Erledigt</button>
+        </div>
+
+        <div id="panel-open" role="tabpanel" aria-labelledby="tab-open">
+            <ul class="todo-list" aria-live="polite">
+                <li th:each="todo : ${openTodos}" class="todo-card todo-open">
+                    <div class="todo-item">
+                        <div class="todo-left">
+                            <strong th:text="${todo.description}"></strong><br/>
+                            <small th:text="'Erstellt: ' + ${#temporals.format(todo.createdAt, 'dd.MM.yyyy HH:mm')}"></small>
+                        </div>
+
+                        <div class="todo-middle">
+                            <label for="comment-[[${todo.id}]]" class="visually-hidden">Kommentar</label>
+                            <textarea id="comment-[[${todo.id}]]" name="comment" rows="2"
+                                      th:text="${todo.comment}" placeholder="Kommentar eingeben…"></textarea>
+                        </div>
+
+                        <div class="todo-right">
+                            <form th:action="@{'/todos/' + ${todo.id} + '/complete'}" method="post">
+                                <button type="submit" class="button btn-success">Erledigt</button>
+                            </form>
+                            <form th:action="@{'/todos/' + ${todo.id} + '/delete'}" method="post"
+                                  onsubmit="return confirm('Eintrag wirklich löschen?');">
+                                <button type="submit" class="button delete-button">Löschen</button>
+                            </form>
+                        </div>
                     </div>
-                    <div th:if="${!user.enabled}">
-                        <span style="color: grey; font-weight: 500;">Deaktiviert</span>
-                        <form th:if="${user.username} != ${#authentication.name}"
-                              th:action="@{'/admin/user/' + ${user.id} + '/enable'}"
-                              method="post" style="display:inline;">
-                            <button type="submit" class="button enable-button">Aktivieren</button>
-                        </form>
+                </li>
+            </ul>
+        </div>
+
+        <div id="panel-done" role="tabpanel" aria-labelledby="tab-done" hidden>
+            <ul class="todo-list">
+                <li th:each="todo : ${doneTodos}" class="todo-card todo-done">
+                    <div>
+                        <strong th:text="${todo.description}"></strong><br/>
+                        <span th:text="'Erstellt: ' + ${#temporals.format(todo.createdAt, 'dd.MM.yyyy HH:mm')}"></span><br/>
+                        <span th:text="'Erledigt: ' + ${#temporals.format(todo.completedAt, 'dd.MM.yyyy HH:mm')}"></span><br/>
+                        <p><strong>Kommentar:</strong> <span th:text="${todo.comment} ?: '-' "></span></p>
                     </div>
-                    <form th:if="${user.username} != ${#authentication.name}"
-                          th:action="@{'/admin/user/' + ${user.id} + '/delete'}"
-                          method="post" style="display:inline;"
-                          onsubmit="return confirm('Benutzer wirklich löschen?');">
+                    <form th:action="@{'/todos/' + ${todo.id} + '/delete'}" method="post"
+                          onsubmit="return confirm('Eintrag wirklich löschen?');" style="margin-top: 0.5rem;">
                         <button type="submit" class="button delete-button">Löschen</button>
                     </form>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-
-        <h2 style="margin-top: 3rem;">System-Logs</h2>
-        <button class="button" onclick="loadLogs()">Logs aktualisieren</button>
-        <pre id="logOutput" th:text="${logs}">Log-Ausgabe lädt...</pre>
-    </div>
-
-	<!-- Inhalt für normale Benutzer -->
-	    <div sec:authorize="!hasRole('ADMIN')">
-	        <section aria-labelledby="todo-heading">
-	            <h2 id="todo-heading">Deine ToDo-Liste</h2>
-
-	            <!-- Formular für neue Aufgaben -->
-	            <form method="post" th:action="@{/todos}" class="todo-form" aria-label="Neue Aufgabe erstellen">
-	                <label for="newTodoDescription" class="visually-hidden">Neue Aufgabe</label>
-	                <input type="text" id="newTodoDescription" name="description" placeholder="Neue Aufgabe"
-	                       required aria-required="true" class="form-control" />
-	                <button type="submit" class="button btn-new" aria-label="Aufgabe hinzufügen">Hinzufügen</button>
-	            </form><br>
-
-	            <!-- Tab-Schaltflächen -->
-	            <div class="tab-buttons" role="tablist" aria-label="Aufgabenansicht">
-	                <button role="tab" id="tab-open" onclick="showTab('open')" aria-selected="true">Offen</button>
-	                <button role="tab" id="tab-done" onclick="showTab('done')" aria-selected="false">Erledigt</button>
-	            </div>
-
-	            <!-- Panel: Offene Aufgaben -->
-	            <div id="panel-open" role="tabpanel" aria-labelledby="tab-open">
-	                <ul class="todo-list" aria-live="polite">
-	                    <li th:each="todo : ${openTodos}"
-	                        class="todo-card"
-	                        th:classappend="${todo.completed} ? 'todo-done' : 'todo-open'">
-
-	                        <form th:action="@{'/todos/' + ${todo.id} + '/complete'}" method="post" class="todo-form-row">
-	                            <div class="todo-left">
-	                                <strong th:text="${todo.description}"></strong><br/>
-	                                <small th:text="'Erstellt: ' + ${#temporals.format(todo.createdAt, 'dd.MM.yyyy HH:mm')}"></small>
-	                            </div>
-	                            <div class="todo-middle">
-	                                <label for="comment-[[${todo.id}]]" class="visually-hidden">Kommentar</label>
-	                                <textarea id="comment-[[${todo.id}]]" name="comment" rows="2"
-	                                          th:text="${todo.comment}" placeholder="Kommentar eingeben…"></textarea>
-	                            </div>
-	                            <div class="todo-right">
-	                                <button type="submit" class="button btn-success">Erledigt</button>
-	                            </div>
-	                        </form>
-	                    </li>
-	                </ul>
-	            </div>
-
-	            <!-- Panel: Erledigte Aufgaben -->
-	            <div id="panel-done" role="tabpanel" aria-labelledby="tab-done" hidden>
-	                <ul class="todo-list">
-	                    <li th:each="todo : ${doneTodos}" class="todo-card todo-done">
-	                        <div>
-	                            <strong th:text="${todo.description}"></strong><br/>
-	                            <span th:text="'Erstellt: ' + ${#temporals.format(todo.createdAt, 'dd.MM.yyyy HH:mm')}"></span><br/>
-	                            <span th:text="'Erledigt: ' + ${#temporals.format(todo.completedAt, 'dd.MM.yyyy HH:mm')}"></span><br/>
-	                            <p><strong>Kommentar:</strong> <span th:text="${todo.comment} ?: '-' "></span></p>
-	                        </div>
-							<form th:action="@{'/todos/' + ${todo.id} + '/delete'}" method="post"
-							      onsubmit="return confirm('Eintrag wirklich löschen?');" style="margin-top: 0.5rem;">
-							    <button type="submit" class="button delete-button">Löschen</button>
-							</form>
-	                    </li>
-	                </ul>
-	            </div>
-	        </section>
-	    </div>
-	</div>
+                </li>
+            </ul>
+        </div>
+    </section>
 </div>
-
 <script>
-function loadLogs() {
-    fetch('/admin/logs')
-        .then(res => res.text())
-        .then(data => {
-            document.getElementById('logOutput').textContent = data;
-        })
-        .catch(() => {
-            document.getElementById('logOutput').textContent = 'Fehler beim Laden der Logs.';
-        });
-}
+    function showTab(tab) {
+        const open = document.getElementById("panel-open");
+        const done = document.getElementById("panel-done");
+        const tabOpen = document.getElementById("tab-open");
+        const tabDone = document.getElementById("tab-done");
 
-function showTab(tab) {
-    const open = document.getElementById("panel-open");
-    const done = document.getElementById("panel-done");
-    const tabOpen = document.getElementById("tab-open");
-    const tabDone = document.getElementById("tab-done");
-
-    if (tab === 'open') {
-        open.hidden = false;
-        done.hidden = true;
-        tabOpen.setAttribute("aria-selected", "true");
-        tabDone.setAttribute("aria-selected", "false");
-    } else {
-        open.hidden = true;
-        done.hidden = false;
-        tabOpen.setAttribute("aria-selected", "false");
-        tabDone.setAttribute("aria-selected", "true");
+        if (tab === 'open') {
+            open.hidden = false;
+            done.hidden = true;
+            tabOpen.setAttribute("aria-selected", "true");
+            tabDone.setAttribute("aria-selected", "false");
+        } else {
+            open.hidden = true;
+            done.hidden = false;
+            tabOpen.setAttribute("aria-selected", "false");
+            tabDone.setAttribute("aria-selected", "true");
+        }
     }
-}
 </script>
 </body>
 </html>

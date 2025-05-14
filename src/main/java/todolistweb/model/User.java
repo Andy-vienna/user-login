@@ -8,6 +8,25 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+/** DataModel for the user entity.
+ *  * @author Andreas Fischer
+ *  * @version 1.0
+ *  * @since 2025-05-10
+ *  * @description This class represents a user in the application.
+ *  *  It contains fields for the user's ID, username, password, roles,
+ *  *  *  enabled status, email, phone number, verification token,
+ *  *  *  token expiry date, reset token, and reset token expiry date.
+ *  *  *  The class includes getter and setter methods for each field.
+ *  *  *  The @Entity annotation indicates that this class is a JPA entity,
+ *  *  *  and the @Table annotation specifies the name of the database table.
+ *  *  *  The @Id annotation specifies the primary key of the entity,
+ *  *  *  and the @GeneratedValue annotation specifies the strategy for generating
+ *  *  *  the primary key value.
+ *  *  *  The class is part of the todolistweb.model package.
+ *  *  *  @Entity
+ *  *  *  @Table(name = "users")
+ *  *  *  @GeneratedValue(strategy = GenerationType.IDENTITY)
+ */
 @Entity
 @Table(name = "users")
 public class User {

@@ -16,6 +16,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.validation.Valid;
 
+/** AuthController
+ *  Controller for user authentication and registration.
+ *  Provides endpoints for user registration, login, and email verification.
+ */
 @Controller
 public class AuthController {
 

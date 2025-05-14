@@ -7,6 +7,21 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.IOException;
 
+/** TrayIconApp für ToDoList-Web
+ *  * @author Michael Schmid
+ *  * @version 1.0
+ *  *  Diese Klasse implementiert die TrayIcon-Funktionalität für die ToDoList-Web-Anwendung.
+ *  *  * @see SystemTray
+ *  *  * @see TrayIcon
+ *  *  * @see PopupMenu
+ *  *  * @see MenuItem
+ *  *  * @see Image
+ *  *  * @see ImageIO
+ *  *  * @see IOException
+ *  *  * @see AWTException
+ *  *  * @see SpringApplication
+ *  *  * @see ApplicationContextProvider
+ */
 @Component
 public class TrayIconApp {
 
