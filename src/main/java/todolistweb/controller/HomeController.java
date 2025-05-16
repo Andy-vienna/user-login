@@ -85,7 +85,7 @@ public class HomeController {
 	        User user = userRepository.findByUsername(principal.getName())
 	                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
-	        LocalDateTime cutoff = LocalDateTime.now().minusDays(2);
+	        LocalDateTime cutoff = LocalDateTime.now().minusDays(90);
 	        List<Todo> visibleTodos = todoRepository.findVisibleTodosByUser(user, cutoff);
 
 	        List<Todo> openTodos = visibleTodos.stream()

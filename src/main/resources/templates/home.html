@@ -13,6 +13,24 @@
             padding: 0;
             background-color: #f7fafc;
         }
+		.header {
+		    background-color: #2b6cb0;
+		    color: white;
+		    padding: 1rem 2rem;
+		    display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		}
+		.header .left {
+		    font-size: 1.2rem;
+		    font-weight: 600;
+		}
+		.header .right a {
+		    color: white;
+		    margin-left: 1rem;
+		    text-decoration: none;
+		    font-weight: 500;
+		}
 
         .main-content {
             padding: 2rem;
@@ -128,7 +146,83 @@
     </style>
 </head>
 <body>
+<div class="header">
+	<div class="left">
+	    Willkommen <span sec:authentication="name"></span>
+	</div>
+	<div class="right">
+	    <a th:href="@{/profile}">Profil</a>
+	    <a th:href="@{/profile/password}">Passwort ändern</a>
+	    <a th:href="@{/logout}">Logout</a>
+	</div>
+</div>
+	
 <div class="main-content">
+	
+	<!-- Inhalt für Admin -->
+	<div sec:authorize="hasRole('ADMIN')">
+	    <h2>Benutzerverwaltung</h2>
+	    <table>
+	        <thead>
+	        <tr>
+	            <th>ID</th>
+	            <th>Benutzername</th>
+	            <th>E-Mail</th>
+	            <th>Rolle</th>
+				<th>Rollenwechsel</th>
+	            <th>Aktiv</th>
+	            <th>Aktion</th>
+	        </tr>
+	        </thead>
+	        <tbody>
+	        <tr th:each="user : ${users}">
+	            <td th:text="${user.id}"></td>
+	            <td th:text="${user.username}"></td>
+	            <td th:text="${user.email}"></td>
+	            <td th:text="${user.roles}"></td>
+				<td>
+					<form th:action="@{'/admin/user/' + ${user.id} + '/toggle-role'}" method="post"
+						th:if="${user.username != loggedInUser}">
+							<button type="submit" class="login-btn"
+								th:text="${user.roles.contains('ADMIN')} ? 'Zum User' : 'Zum Admin'">
+							</button>
+					</form>
+					<span th:if="${user.username == loggedInUser}">-</span>
+				</td>
+	            <td th:text="${user.enabled} ? 'Ja' : 'Nein'"></td>
+	            <td>
+	                <div th:if="${user.enabled} and ${user.username} != ${#authentication.name}">
+	                    <form th:action="@{'/admin/user/' + ${user.id} + '/disable'}" method="post" style="display:inline;">
+	                        <button type="submit" class="button">Deaktivieren</button>
+	                    </form>
+	                </div>
+	                <div th:if="${!user.enabled}">
+	                    <span style="color: grey; font-weight: 500;">Deaktiviert</span>
+	                    <form th:if="${user.username} != ${#authentication.name}"
+	                          th:action="@{'/admin/user/' + ${user.id} + '/enable'}"
+	                          method="post" style="display:inline;">
+	                        <button type="submit" class="button enable-button">Aktivieren</button>
+	                    </form>
+	                </div>
+	                <form th:if="${user.username} != ${#authentication.name}"
+	                      th:action="@{'/admin/user/' + ${user.id} + '/delete'}"
+	                      method="post" style="display:inline;"
+	                      onsubmit="return confirm('Benutzer wirklich löschen?');">
+	                    <button type="submit" class="button delete-button">Löschen</button>
+	                </form>
+	            </td>
+	        </tr>
+	        </tbody>
+	    </table>
+
+	    <h2 style="margin-top: 3rem;">System-Logs</h2>
+	    <button class="button" onclick="loadLogs()">Logs aktualisieren</button>
+	    <pre id="logOutput" th:text="${logs}">Log-Ausgabe lädt...</pre>
+	</div>
+	
+	<!-- Inhalt für normale Benutzer -->
+	<div sec:authorize="!hasRole('ADMIN')">	
+	
     <section aria-labelledby="todo-heading">
         <h2 id="todo-heading">Deine ToDo-Liste</h2>
 
@@ -183,6 +277,7 @@
             </ul>
         </div>
     </section>
+	</div>
 </div>
 <script>
     function showTab(tab) {

@@ -84,7 +84,7 @@ public class PasswordResetController {
 		user.setResetTokenExpiry(null);
 		userRepository.save(user);
 
-		return "redirect:/auth/login?reset";
+		return "redirect:/login?reset";
 	}
 
 	@PostMapping("/auth/reset-request")
