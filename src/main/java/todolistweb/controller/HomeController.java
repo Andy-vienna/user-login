@@ -26,8 +26,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import jakarta.servlet.http.HttpSession;
-
 /** HomeController
  *  Controller for the home page of the application.
  *  Provides endpoints for displaying user-specific information,
@@ -49,22 +47,21 @@ public class HomeController {
 	private TodoRepository todoRepository;
 
 	@GetMapping("/admin/logs")
-	@ResponseBody
-	public String getLogs() {
-		try {
-			Path logPath = Paths.get("logs/application.log");
-			if (Files.exists(logPath)) {
-				List<String> allLines = Files.readAllLines(logPath);
-				List<String> lastLines = allLines.stream().skip(Math.max(0, allLines.size() - 50))
-						.collect(Collectors.toList());
-				return String.join("\n", lastLines);
-			} else {
-				return "Keine Logdatei gefunden.";
-			}
-		} catch (IOException e) {
-			return "Fehler beim Lesen der Logdatei: " + e.getMessage();
-		}
-	}
+    @ResponseBody
+    public String getLogs() {
+        try {
+            Path logPath = Paths.get("logs/application.log");
+            if (Files.exists(logPath)) {
+                List<String> allLines = Files.readAllLines(logPath);
+                List<String> lastLines = allLines.stream().skip(Math.max(0, allLines.size() - 50)).collect(Collectors.toList());
+                return String.join("\n", lastLines);
+            } else {
+                return "Keine Logdatei gefunden.";
+            }
+        } catch (IOException e) {
+            return "Fehler beim Lesen der Logdatei: " + e.getMessage();
+        }
+    }
 
 	@GetMapping("/")
 	public String home(Model model, Authentication authentication, Principal principal) {
@@ -117,11 +114,11 @@ public class HomeController {
 	
 	@GetMapping("/session/check")
 	@ResponseBody
-	public ResponseEntity<Void> checkSession(HttpSession session) {
-	    if (session == null || session.getAttribute("user") == null) {
+	public ResponseEntity<Void> checkSession(Principal principal) {
+	    if (principal == null) {
 	        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
 	    }
 	    return ResponseEntity.ok().build();
 	}
-
+	
 }
