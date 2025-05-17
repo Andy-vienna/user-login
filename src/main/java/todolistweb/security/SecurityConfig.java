@@ -49,7 +49,7 @@ public class SecurityConfig {
 				.authorizeHttpRequests(
 						auth -> auth
 								.requestMatchers("/register", "/login", "/verify", "/reset-request", "/reset-password",
-										"/auth/**", "/css/**", "/js/**", "/images/**")
+										"/todos/**", "/auth/**", "/css/**", "/js/**", "/images/**")
 								.permitAll().anyRequest().authenticated())
 				.formLogin(form -> form.loginPage("/login").failureUrl("/login?error").defaultSuccessUrl("/", true)
 						.permitAll())

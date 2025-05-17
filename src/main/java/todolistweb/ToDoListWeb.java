@@ -12,7 +12,7 @@ import todolistweb.trayicon.TrayIconApp;
  * 
  */
 @SpringBootApplication
-@ComponentScan(basePackages = {"todolistweb", "todolistweb.trayicon"})
+@ComponentScan(basePackages = {"todolistweb", "todolistweb.controller", "todolistweb.trayicon"})
 @EnableJpaRepositories(basePackages = "todolistweb.repository")
 public class ToDoListWeb implements CommandLineRunner {
 

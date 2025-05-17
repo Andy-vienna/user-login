@@ -18,9 +18,13 @@ import org.springframework.data.repository.query.Param;
 public interface TodoRepository extends JpaRepository<Todo, Long> {
     List<Todo> findByUser(User user);
     
-    @Query("SELECT t FROM Todo t WHERE t.user = :user AND " +
-    	       "(t.completed = false OR t.completedAt >= :cutoff)")
-    	List<Todo> findVisibleTodosByUser(@Param("user") User user,
-    	                                   @Param("cutoff") LocalDateTime cutoff);
+    @Query("SELECT t FROM Todo t WHERE t.user = :user AND (t.completed = false OR t.completedAt >= :cutoff)")
+    List<Todo> findVisibleTodosByUser(@Param("user") User user, @Param("cutoff") LocalDateTime cutoff);
+    
+    @Query("SELECT DISTINCT t FROM Todo t LEFT JOIN FETCH t.comments WHERE t.completedAt IS NULL AND t.user = :user")
+    List<Todo> findOpenTodosWithComments(@Param("user") User user);
+    
+    @Query("SELECT DISTINCT t FROM Todo t LEFT JOIN FETCH t.comments WHERE t.user = :user AND t.completedAt IS NOT NULL AND t.completedAt >= :cutoff")
+    List<Todo> findCompletedWithCommentsSince(@Param("user") User user, @Param("cutoff") LocalDateTime cutoff);
 
 }

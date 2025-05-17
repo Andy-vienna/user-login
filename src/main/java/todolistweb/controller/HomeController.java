@@ -13,7 +13,11 @@ import todolistweb.model.Todo;
 import todolistweb.model.User;
 import todolistweb.repository.TodoRepository;
 import todolistweb.repository.UserRepository;
+import todolistweb.version.VersionProvider;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -22,6 +26,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import jakarta.servlet.http.HttpSession;
+
 /** HomeController
  *  Controller for the home page of the application.
  *  Provides endpoints for displaying user-specific information,
@@ -29,6 +35,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 public class HomeController {
+	
+	private final VersionProvider versionProvider;
+
+    public HomeController(VersionProvider versionProvider) {
+        this.versionProvider = versionProvider;
+    }
 
 	@Autowired
 	private UserRepository userRepository;
@@ -57,6 +69,8 @@ public class HomeController {
 	@GetMapping("/")
 	public String home(Model model, Authentication authentication, Principal principal) {
 		boolean isAdmin = authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"));
+		
+		model.addAttribute("version", versionProvider.getVersion());
 
 		if (isAdmin) {
 			// Benutzerliste für Admin
@@ -86,22 +100,28 @@ public class HomeController {
 	                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
 	        LocalDateTime cutoff = LocalDateTime.now().minusDays(90);
-	        List<Todo> visibleTodos = todoRepository.findVisibleTodosByUser(user, cutoff);
+	        List<Todo> visibleTodos = todoRepository.findCompletedWithCommentsSince(user, cutoff);
 
-	        List<Todo> openTodos = visibleTodos.stream()
-	                .filter(t -> !t.isCompleted())
-	                .toList();
-
-	        List<Todo> doneTodos = visibleTodos.stream()
-	                .filter(Todo::isCompleted)
-	                .toList();
-
+	        List<Todo> openTodos = todoRepository.findOpenTodosWithComments(user);
+	        List<Todo> doneTodos = visibleTodos.stream().filter(Todo::isCompleted).toList();
+	       
+	        model.addAttribute("newTodo", new Todo());
+	        
 	        model.addAttribute("openTodos", openTodos);
 	        model.addAttribute("doneTodos", doneTodos);
-	        model.addAttribute("newTodo", new Todo());
+	        
 	    }
 
 		return "home";
+	}
+	
+	@GetMapping("/session/check")
+	@ResponseBody
+	public ResponseEntity<Void> checkSession(HttpSession session) {
+	    if (session == null || session.getAttribute("user") == null) {
+	        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+	    }
+	    return ResponseEntity.ok().build();
 	}
 
 }

@@ -2,148 +2,179 @@
 <html lang="de" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
-    <title>ToDoList-Web</title>
+    <title th:text="'ToDoList v' + ${version}">ToDoList</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="icon" href="/favicon.ico?v=1" type="image/x-icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f7fafc;
-        }
-		.header {
-		    background-color: #2b6cb0;
-		    color: white;
-		    padding: 1rem 2rem;
-		    display: flex;
-		    justify-content: space-between;
-		    align-items: center;
-		}
-		.header .left {
-		    font-size: 1.2rem;
-		    font-weight: 600;
-		}
-		.header .right a {
-		    color: white;
-		    margin-left: 1rem;
-		    text-decoration: none;
-		    font-weight: 500;
-		}
+	<style>
+			.version-info {
+			    text-align: right;
+			    padding: 0.25rem 2rem 0 0;
+			    font-size: 0.85rem;
+			    color: #4a5568;
+			    font-style: normal;
+			}
+	        body {
+	            font-family: 'Inter', sans-serif;
+	            margin: 0;
+	            padding: 0;
+	            background-color: #f7fafc;
+	        }
+			.header {
+			    background-color: #2b6cb0;
+			    color: white;
+			    padding: 1rem 2rem;
+			    display: flex;
+			    justify-content: space-between;
+			    align-items: center;
+			}
+			.header .left {
+			    font-size: 1.2rem;
+			    font-weight: 600;
+			}
+			.header .right a {
+			    color: white;
+			    margin-left: 1rem;
+			    text-decoration: none;
+			    font-weight: 500;
+			}
 
-        .main-content {
-            padding: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+	        .main-content {
+	            padding: 2rem;
+	            max-width: 1000px;
+	            margin: 0 auto;
+	        }
 
-        h2 {
-            color: #2d3748;
-            margin-bottom: 1rem;
-        }
+	        h2 {
+	            color: #2d3748;
+	            margin-bottom: 1rem;
+	        }
 
-        .todo-item {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
+	        .todo-item {
+	            display: flex;
+	            justify-content: space-between;
+	            flex-wrap: wrap;
+	            gap: 1rem;
+	        }
 
-        .todo-left, .todo-middle, .todo-right {
-            flex: 1 1 30%;
-        }
+	        .todo-left, .todo-middle, .todo-right {
+	            flex: 1 1 30%;
+	        }
 
-        .todo-middle {
-            flex: 2;
-            width: 100%;
-        }
+	        .todo-middle {
+	            flex: 2;
+	            width: 100%;
+	        }
 
-        .todo-middle textarea {
-            width: 100%;
-            resize: vertical;
-            box-sizing: border-box;
-        }
+	        .todo-middle textarea {
+	            width: 100%;
+	            resize: vertical;
+	            box-sizing: border-box;
+	        }
 
-        .todo-right {
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-        }
+	        .todo-right {
+	            display: flex;
+	            gap: 0.5rem;
+	            align-items: center;
+	        }
 
-        .todo-right form {
-            margin: 0;
-        }
+	        .todo-right form {
+	            margin: 0;
+	        }
 
-        .button {
-            padding: 0.4rem 0.8rem;
-            font-size: 0.85rem;
-            border-radius: 6px;
-            border: none;
-            cursor: pointer;
-        }
+	        .button {
+	            padding: 0.4rem 0.8rem;
+	            font-size: 0.85rem;
+	            border-radius: 6px;
+	            border: none;
+	            cursor: pointer;
+	        }
+			
+			.btn-new {
+				background-color: #e9d8fd; /* helles Lila */
+				color: #4c1d95;            /* dunkles Lila für Text */
+			}
 
-        .btn-success {
-            background-color: #38a169;
-            color: white;
-        }
+	        .btn-success {
+	            background-color: #38a169;
+	            color: white;
+	        }
 
-        .delete-button {
-            background-color: #e53e3e;
-            color: white;
-        }
+	        .delete-button {
+	            background-color: #e53e3e;
+	            color: white;
+	        }
+			
+			.comment-button {
+			    background-color: #e9d8fd; /* helles Lila */
+			    color: #4c1d95;            /* dunkles Lila für Text */
+			}
 
-        .todo-card {
-            margin-bottom: 1rem;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
+	        .todo-card {
+	            margin-bottom: 1rem;
+	            padding: 1rem;
+	            border-radius: 8px;
+	            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	        }
 
-        .todo-open {
-            background-color: #fff5f5;
-            border-left: 4px solid #e53e3e;
-        }
+	        .todo-open {
+	            background-color: #fff5f5;
+	            border-left: 4px solid #e53e3e;
+	        }
 
-        .todo-done {
-            background-color: #f0fff4;
-            border-left: 4px solid #38a169;
-        }
+	        .todo-done {
+	            background-color: #f0fff4;
+	            border-left: 4px solid #38a169;
+	        }
 
-        .tab-buttons {
-            margin: 1rem 0;
-        }
+	        .tab-buttons {
+	            margin: 1rem 0;
+	        }
 
-        .tab-buttons button {
-            margin-right: 0.5rem;
-            padding: 0.5rem 1rem;
-            border: none;
-            background-color: #e2e8f0;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+	        .tab-buttons button {
+	            margin-right: 0.5rem;
+	            padding: 0.5rem 1rem;
+	            border: none;
+	            background-color: #e2e8f0;
+	            cursor: pointer;
+	            border-radius: 5px;
+	        }
 
-        .tab-buttons button[aria-selected="true"] {
-            background-color: #2b6cb0;
-            color: white;
-        }
-		
-		@media (max-width: 768px) {
-		    .todo-left,
-		    .todo-middle,
-		    .todo-right {
-		        flex: 1 1 100%;
-		    }
+	        .tab-buttons button[aria-selected="true"] {
+	            background-color: #2b6cb0;
+	            color: white;
+	        }
 
-		    .todo-right {
-		        justify-content: flex-start;
-		    }
+	        input[name="description"] {
+	            min-width: 250px;
+	        }
 
-		    .todo-middle textarea {
-		        width: 100%;
-		    }
-		}
-    </style>
+	        input[name="content"] {
+	            width: 100%;
+	            max-width: 500px;
+	            box-sizing: border-box;
+	        }
+
+	        .comment-block p {
+	            margin: 0;
+	        }
+
+			@media (max-width: 768px) {
+			    .todo-left,
+			    .todo-middle,
+			    .todo-right {
+			        flex: 1 1 100%;
+			    }
+
+			    .todo-right {
+			        justify-content: flex-start;
+			    }
+
+			    .todo-middle textarea {
+			        width: 100%;
+			    }
+			}
+	    </style>
 </head>
 <body>
 <div class="header">
@@ -156,6 +187,7 @@
 	    <a th:href="@{/logout}">Logout</a>
 	</div>
 </div>
+<div class="version-info" th:text="'Version ' + ${version}"></div>
 	
 <div class="main-content">
 	
@@ -226,40 +258,58 @@
     <section aria-labelledby="todo-heading">
         <h2 id="todo-heading">Deine ToDo-Liste</h2>
 
+		<!-- Formular für neue Aufgaben -->
+		<form method="post" th:action="@{/todos}" class="todo-form" aria-label="Neue Aufgabe erstellen">
+		    <label for="newTodoDescription" class="visually-hidden">Neue Aufgabe</label>
+		    <input type="text" id="newTodoDescription" name="description" placeholder="Neue Aufgabe"
+		           required aria-required="true" class="form-control" />
+		    <button type="submit" class="button btn-new" aria-label="Aufgabe hinzufügen">Hinzufügen</button>
+		</form><br>
+
+		<!-- Tab-Schaltflächen -->
         <div class="tab-buttons" role="tablist" aria-label="Aufgabenansicht">
             <button role="tab" id="tab-open" onclick="showTab('open')" aria-selected="true">Offen</button>
             <button role="tab" id="tab-done" onclick="showTab('done')" aria-selected="false">Erledigt</button>
         </div>
 
+		<!-- Panel: Offene Aufgaben -->
         <div id="panel-open" role="tabpanel" aria-labelledby="tab-open">
-            <ul class="todo-list" aria-live="polite">
-                <li th:each="todo : ${openTodos}" class="todo-card todo-open">
-                    <div class="todo-item">
-                        <div class="todo-left">
-                            <strong th:text="${todo.description}"></strong><br/>
-                            <small th:text="'Erstellt: ' + ${#temporals.format(todo.createdAt, 'dd.MM.yyyy HH:mm')}"></small>
-                        </div>
+			<ul class="todo-list" aria-live="polite">
+	        	<li th:each="todo : ${openTodos}" class="todo-card todo-open">
+                	<div class="todo-item">
+	                	<div class="todo-left">
+			        		<strong th:text="${todo.description}"></strong><br/>
+			            	<small th:text="'Erstellt: ' + ${#temporals.format(todo.createdAt, 'dd.MM.yyyy HH:mm')}"></small>
+			        	</div>
 
-                        <div class="todo-middle">
-                            <label for="comment-[[${todo.id}]]" class="visually-hidden">Kommentar</label>
-                            <textarea id="comment-[[${todo.id}]]" name="comment" rows="2"
-                                      th:text="${todo.comment}" placeholder="Kommentar eingeben…"></textarea>
-                        </div>
+			        	<div class="todo-right">
+			        		<form th:action="@{'/todos/' + ${todo.id} + '/complete'}" method="post">
+			            		<button type="submit" class="button btn-success">Erledigt</button>
+			            	</form>
+			            	<form th:action="@{'/todos/' + ${todo.id} + '/delete'}" method="post"
+			            		onsubmit="return confirm('Eintrag wirklich löschen?');">
+			            		<button type="submit" class="button delete-button">Löschen</button>
+			            	</form>
+			        	</div>
+			        </div>
 
-                        <div class="todo-right">
-                            <form th:action="@{'/todos/' + ${todo.id} + '/complete'}" method="post">
-                                <button type="submit" class="button btn-success">Erledigt</button>
-                            </form>
-                            <form th:action="@{'/todos/' + ${todo.id} + '/delete'}" method="post"
-                                  onsubmit="return confirm('Eintrag wirklich löschen?');">
-                                <button type="submit" class="button delete-button">Löschen</button>
-                            </form>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+			        <!-- Kommentarbereich separat -->
+			        <br><div class="comment-block">
+						<div th:each="comment : ${todo.comments}">
+							<span th:text="${#temporals.format(comment.createdAt, 'dd.MM.yyyy HH:mm')}">Zeit</span>
+							<strong th:text="${comment.author.username}">Autor</strong>:
+							<span th:text="${comment.content}">Inhalt</span>
+						</div>
+			           	<form th:action="@{'/todos/' + ${todo.id} + '/comment'}" method="post">
+			                <input type="text" name="content" placeholder="Neuer Kommentar…" required>
+							<button type="submit" class="button comment-button">Speichern</button>
+			            </form>
+			        </div>
+			    </li>
+			</ul>
         </div>
 
+		<!-- Panel: Erledigte Aufgaben -->
         <div id="panel-done" role="tabpanel" aria-labelledby="tab-done" hidden>
             <ul class="todo-list">
                 <li th:each="todo : ${doneTodos}" class="todo-card todo-done">
@@ -267,7 +317,13 @@
                         <strong th:text="${todo.description}"></strong><br/>
                         <span th:text="'Erstellt: ' + ${#temporals.format(todo.createdAt, 'dd.MM.yyyy HH:mm')}"></span><br/>
                         <span th:text="'Erledigt: ' + ${#temporals.format(todo.completedAt, 'dd.MM.yyyy HH:mm')}"></span><br/>
-                        <p><strong>Kommentar:</strong> <span th:text="${todo.comment} ?: '-' "></span></p>
+						<br><div class="comment-block">
+						    <div th:each="comment : ${todo.comments}">
+								<span th:text="${#temporals.format(comment.createdAt, 'dd.MM.yyyy HH:mm')}">Zeit</span>
+						        <strong th:text="${comment.author.username}">Autor</strong>:
+						        <span th:text="${comment.content}">Inhalt</span>
+						    </div>
+						</div>
                     </div>
                     <form th:action="@{'/todos/' + ${todo.id} + '/delete'}" method="post"
                           onsubmit="return confirm('Eintrag wirklich löschen?');" style="margin-top: 0.5rem;">
@@ -298,6 +354,30 @@
             tabDone.setAttribute("aria-selected", "true");
         }
     }
+	
+	setInterval(function() {
+	    fetch('/session/check', { method: 'GET' })
+	        .then(response => {
+	            if (response.status === 401 || response.redirected) {
+	                window.location.href = '/login?timeout'; // oder deine Loginseite
+	            }
+	        })
+	        .catch(() => {
+	            // Bei Netzwerkfehler o.ä. ebenfalls auf Login umleiten
+	            window.location.href = '/login?timeout';
+	        });
+	}, 60000); // alle 60 Sekunden prüfen
+
+	function loadLogs() {
+	    fetch('/admin/logs')
+	        .then(res => res.text())
+	        .then(data => {
+	            document.getElementById('logOutput').textContent = data;
+	        })
+	        .catch(() => {
+	            document.getElementById('logOutput').textContent = 'Fehler beim Laden der Logs.';
+	        });
+	}
 </script>
 </body>
 </html>
