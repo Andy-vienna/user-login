@@ -65,52 +65,58 @@ public class HomeController {
 
 	@GetMapping("/")
 	public String home(Model model, Authentication authentication, Principal principal) {
-		boolean isAdmin = authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"));
-		
-		model.addAttribute("version", versionProvider.getVersion());
+	    boolean isAdmin = authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"));
 
-		if (isAdmin) {
-			// Benutzerliste für Admin
-			List<User> users = userRepository.findAll();
-			model.addAttribute("users", users);
+	    model.addAttribute("version", versionProvider.getVersion());
 
-			// Logs einlesen
-			try {
-				Path logPath = Paths.get("logs/application.log");
-				if (Files.exists(logPath)) {
-					List<String> allLines = Files.readAllLines(logPath);
-					List<String> lastLines = allLines.stream().skip(Math.max(0, allLines.size() - 50)) // nur die
-																										// letzten 50
-																										// Zeilen
-							.collect(Collectors.toList());
-					model.addAttribute("logs", String.join("\n", lastLines));
-				} else {
-					model.addAttribute("logs", "Keine Logdatei gefunden.");
-				}
-			} catch (IOException e) {
-				model.addAttribute("logs", "Fehler beim Lesen der Logdatei: " + e.getMessage());
-			}
-		}
-		
-		if (!isAdmin) {
+	    if (isAdmin) {
+	        // Benutzerliste für Admin
+	        List<User> users = userRepository.findAll();
+	        model.addAttribute("users", users);
+
+	        // Logs einlesen
+	        try {
+	            Path logPath = Paths.get("logs/application.log");
+	            if (Files.exists(logPath)) {
+	                List<String> allLines = Files.readAllLines(logPath);
+	                List<String> lastLines = allLines.stream()
+	                        .skip(Math.max(0, allLines.size() - 50))
+	                        .collect(Collectors.toList());
+	                model.addAttribute("logs", String.join("\n", lastLines));
+	            } else {
+	                model.addAttribute("logs", "Keine Logdatei gefunden.");
+	            }
+	        } catch (IOException e) {
+	            model.addAttribute("logs", "Fehler beim Lesen der Logdatei: " + e.getMessage());
+	        }
+	    }
+
+	    if (!isAdmin) {
 	        User user = userRepository.findByUsername(principal.getName())
 	                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
-	        LocalDateTime cutoff = LocalDateTime.now().minusDays(90);
-	        List<Todo> visibleTodos = todoRepository.findCompletedWithCommentsSince(user, cutoff);
+	        // Statt nur owner → auch ToDos, die mit dem Benutzer geteilt sind
+	        List<Todo> allAccessibleTodos = todoRepository.findAllAccessibleBy(user);
 
-	        List<Todo> openTodos = todoRepository.findOpenTodosWithComments(user);
-	        List<Todo> doneTodos = visibleTodos.stream().filter(Todo::isCompleted).toList();
-	       
+	        LocalDateTime cutoff = LocalDateTime.now().minusDays(90);
+	        List<Todo> visibleTodos = allAccessibleTodos.stream()
+	                .filter(todo -> todo.isCompleted() && todo.getCompletedAt() != null && todo.getCompletedAt().isAfter(cutoff))
+	                .toList();
+
+	        List<Todo> openTodos = allAccessibleTodos.stream()
+	                .filter(todo -> !todo.isCompleted())
+	                .toList();
+
+	        List<Todo> doneTodos = visibleTodos;
+
 	        model.addAttribute("newTodo", new Todo());
-	        
 	        model.addAttribute("openTodos", openTodos);
 	        model.addAttribute("doneTodos", doneTodos);
-	        
 	    }
 
-		return "home";
+	    return "home";
 	}
+
 	
 	@GetMapping("/session/check")
 	@ResponseBody

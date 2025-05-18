@@ -1,11 +1,14 @@
 package todolistweb.model;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 /** DataModel for the user entity.
@@ -63,6 +66,13 @@ public class User {
 	public String getEmail() {
 		return email;
 	}
+	
+	@OneToMany(mappedBy = "owner")
+	private List<Todo> ownedTodos;
+
+	@ManyToMany(mappedBy = "sharedWith")
+	private List<Todo> sharedTodos;
+
 
 	// Getter und Setter
 	public Long getId() {
@@ -148,5 +158,23 @@ public class User {
 	public void setVerificationToken(String verificationToken) {
 		this.verificationToken = verificationToken;
 	}
+
+	public List<Todo> getOwnedTodos() {
+		return ownedTodos;
+	}
+
+	public void setOwnedTodos(List<Todo> ownedTodos) {
+		this.ownedTodos = ownedTodos;
+	}
+
+	public List<Todo> getSharedTodos() {
+		return sharedTodos;
+	}
+
+	public void setSharedTodos(List<Todo> sharedTodos) {
+		this.sharedTodos = sharedTodos;
+	}
+	
+	
 
 }

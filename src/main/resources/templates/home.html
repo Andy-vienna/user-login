@@ -61,12 +61,11 @@
 	            margin-bottom: 1rem;
 	        }
 			
-	        .todo-item {
-	            display: flex;
-	            justify-content: space-between;
-	            flex-wrap: wrap;
-	            gap: 1rem;
-	        }
+			.todo-item {
+			    display: flex;
+			    justify-content: space-between;
+			    align-items: flex-start;
+			}
 
 	        .todo-left, .todo-middle, .todo-right {
 	            flex: 1 1 30%;
@@ -268,7 +267,8 @@
 	<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 	<!-- Inhalt für normale Benutzer -->
 	<div sec:authorize="!hasRole('ADMIN')">	
-	
+	<div th:if="${shareSuccess}" class="success-message" th:text="${shareSuccess}"></div>
+	<div th:if="${shareError}" class="error-message" th:text="${shareError}"></div>
     <section aria-labelledby="todo-heading">
         <h2 id="todo-heading">Deine ToDo-Liste</h2>
 
@@ -287,43 +287,57 @@
         </div>
 
 		<!-- Panel: Offene Aufgaben -->
-        <div id="panel-open" role="tabpanel" aria-labelledby="tab-open">
+		<div id="panel-open" role="tabpanel" aria-labelledby="tab-open">
 			<ul class="todo-list" aria-live="polite">
-	        	<li th:each="todo : ${openTodos}" class="todo-card todo-open">
-                	<div class="todo-item">
-	                	<div class="todo-left">
-			        		<strong th:text="${todo.description}"></strong><br/>
-			            	<small th:text="'Erstellt: ' + ${#temporals.format(todo.createdAt, 'dd.MM.yyyy HH:mm')}"></small>
-			        	</div>
+		    	<li th:each="todo : ${openTodos}" class="todo-card todo-open">
+		        	<div class="todo-item">
+		            	<div class="todo-left">
+							<strong th:text="${todo.description}"></strong><br/>
+							<small>
+								<span>Erstellt: </span>
+								<strong th:text="${todo.owner.username}">Owner</strong>
+								<span th:text="' am ' + ${#temporals.format(todo.createdAt, 'dd.MM.yyyy HH:mm')}"></span>
+							</small>
+		            	</div>
 
-			        	<div class="todo-right">
-			        		<form th:action="@{'/todos/' + ${todo.id} + '/complete'}" method="post">
-								<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-			            		<button type="submit" class="button btn-success">Erledigt</button>
-			            	</form>
-			            	<form th:action="@{'/todos/' + ${todo.id} + '/delete'}" method="post" onsubmit="return confirm('Eintrag wirklich löschen?');">
-								<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-			            		<button type="submit" class="button delete-button">Löschen</button>
-			            	</form>
-			        	</div>
-			        </div>
+						<!-- Nur für Besitzer: Erledigen und Löschen -->
+						<div class="todo-right" th:if="${todo.owner.username == #authentication.name}">
+						    <form th:action="@{'/todos/' + ${todo.id} + '/complete'}" method="post">
+						        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+						        <button type="submit" class="button btn-success">Erledigt</button>
+						    </form>
+						    <form th:action="@{'/todos/' + ${todo.id} + '/delete'}" method="post" onsubmit="return confirm('Eintrag wirklich löschen?');">
+						        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+						        <button type="submit" class="button delete-button">Löschen</button>
+						    </form>
+						</div>
+		        	</div>
 
-			        <!-- Kommentarbereich separat -->
-			        <br><div class="comment-block">
+		        	<!-- Kommentarbereich separat -->
+		        	<br><div class="comment-block">
 						<div th:each="comment : ${todo.comments}">
 							<span th:text="${#temporals.format(comment.createdAt, 'dd.MM.yyyy HH:mm')}">Zeit</span>
 							<strong th:text="${comment.author.username}">Autor</strong>:
 							<span th:text="${comment.content}">Inhalt</span>
 						</div>
-			           	<form th:action="@{'/todos/' + ${todo.id} + '/comment'}" method="post">
+		            	<form th:action="@{'/todos/' + ${todo.id} + '/comment'}" method="post">
 							<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-			                <input type="text" name="content" placeholder="Neuer Kommentar…" required>
+		                	<input type="text" name="content" placeholder="Neuer Kommentar…" required>
 							<button type="submit" class="button comment-button">Speichern</button>
-			            </form>
-			        </div>
-			    </li>
+		            	</form>
+
+						<!-- Freigabeformular nur für Owner sichtbar -->
+						<form th:if="${todo.owner.username == #authentication.name}" th:action="@{/todos/share}" method="post">
+							<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+						    <input type="hidden" name="todoId" th:value="${todo.id}" />
+						    <label for="email">Aufgabe freigeben an E-Mail:</label>
+						    <input type="text" name="identifier" required placeholder="Benutzername oder E-Mail" />
+						    <button type="submit" class="button comment-button">Freigeben</button>
+						</form>
+		        	</div>
+		    	</li>
 			</ul>
-        </div>
+		</div>
 
 		<!-- Panel: Erledigte Aufgaben -->
         <div id="panel-done" role="tabpanel" aria-labelledby="tab-done" hidden>
@@ -331,20 +345,30 @@
                 <li th:each="todo : ${doneTodos}" class="todo-card todo-done">
                     <div>
                         <strong th:text="${todo.description}"></strong><br/>
-                        <span th:text="'Erstellt: ' + ${#temporals.format(todo.createdAt, 'dd.MM.yyyy HH:mm')}"></span><br/>
-                        <span th:text="'Erledigt: ' + ${#temporals.format(todo.completedAt, 'dd.MM.yyyy HH:mm')}"></span><br/>
-						<br><div class="comment-block">
-						    <div th:each="comment : ${todo.comments}">
-								<span th:text="${#temporals.format(comment.createdAt, 'dd.MM.yyyy HH:mm')}">Zeit</span>
-						        <strong th:text="${comment.author.username}">Autor</strong>:
-						        <span th:text="${comment.content}">Inhalt</span>
-						    </div>
-						</div>
+						<small>
+							<span>Erstellt: </span>
+							<strong th:text="${todo.owner.username}">Owner</strong>
+							<span th:text="' am ' + ${#temporals.format(todo.createdAt, 'dd.MM.yyyy HH:mm')}"></span>
+
+							<br><span>Erledigt: </span>
+							<strong th:text="${todo.owner.username}">Owner</strong>
+							<span th:text="' am ' + ${#temporals.format(todo.completedAt, 'dd.MM.yyyy HH:mm')}"></span>
+							
+							<div class="comment-block">
+						    	<br><div th:each="comment : ${todo.comments}">
+									<span th:text="${#temporals.format(comment.createdAt, 'dd.MM.yyyy HH:mm')}">Zeit</span>
+						        	<strong th:text="${comment.author.username}">Autor</strong>:
+						        	<span th:text="${comment.content}">Inhalt</span>
+						    	</div>
+							</div>
+						</small>
                     </div>
-                    <form th:action="@{'/todos/' + ${todo.id} + '/delete'}" method="post" onsubmit="return confirm('Eintrag wirklich löschen?');" style="margin-top: 0.5rem;">
-						<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-                        <button type="submit" class="button delete-button">Löschen</button>
-                    </form>
+					<div th:if="${todo.owner.username == #authentication.name}">
+                    	<form th:action="@{'/todos/' + ${todo.id} + '/delete'}" method="post" onsubmit="return confirm('Eintrag wirklich löschen?');" style="margin-top: 0.5rem;">
+							<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                        	<button type="submit" class="button delete-button">Löschen</button>
+                    	</form>
+					</div>
                 </li>
             </ul>
         </div>
@@ -381,6 +405,19 @@
 	            document.getElementById('logOutput').textContent = 'Fehler beim Laden der Logs.';
 	        });
 	}
+	
+	let lastUpdate = null;
+
+	setInterval(() => {
+	    fetch('/todo/last-update')
+	        .then(response => response.text())
+	        .then(timestamp => {
+	            if (lastUpdate && lastUpdate !== timestamp) {
+	                location.reload(); // Neuer Kommentar erkannt
+	            }
+	            lastUpdate = timestamp;
+	        });
+	}, 15000); // prüft alle 15 Sekunden
 	
 	setInterval(function() {
 	    fetch('/session/check', { method: 'GET', credentials: 'same-origin' })

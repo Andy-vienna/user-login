@@ -33,8 +33,7 @@ public class EmailService {
 	 * @param expiryDateTime
 	 * @throws MessagingException
 	 */
-	public void sendResetPassword(String to, String username, String token, LocalDateTime expiryDateTime)
-			throws MessagingException {
+	public void sendResetPassword(String to, String username, String token, LocalDateTime expiryDateTime) throws MessagingException {
 		String subject = "Passwort zurücksetzen";
 		String confirmationUrl = "http://localhost:8080/reset-password?token=" + token;
 
@@ -63,8 +62,7 @@ public class EmailService {
 	 * @param expiryDateTime
 	 * @throws MessagingException
 	 */
-	public void sendVerificationEmail(String to, String username, String token, LocalDateTime expiryDateTime)
-			throws MessagingException {
+	public void sendVerificationEmail(String to, String username, String token, LocalDateTime expiryDateTime) throws MessagingException {
 		String subject = "Bitte bestätige deine E-Mail-Adresse";
 		String confirmationUrl = "http://localhost:8080/verify?token=" + token;
 
@@ -80,6 +78,46 @@ public class EmailService {
 		MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
 
 		helper.setTo(to);
+		helper.setSubject(subject);
+		helper.setText(htmlContent, true);
+
+		mailSender.send(message);
+	}
+	
+	public void sendInvitationEmail(String recipient, String todo) throws MessagingException {
+		String subject = "ToDoList-Web: Einladung zur Zusammenarbeit";
+		String confirmationUrl = "http://localhost:8080/auth/register";
+
+		Context context = new Context();
+		context.setVariable("username", recipient);
+		context.setVariable("confirmationUrl", confirmationUrl);
+
+		String htmlContent = templateEngine.process("auth/mail-template/invitation-email", context);
+
+		MimeMessage message = mailSender.createMimeMessage();
+		MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
+
+		helper.setTo(recipient);
+		helper.setSubject(subject);
+		helper.setText(htmlContent, true);
+
+		mailSender.send(message);
+	}
+	
+	public void sendShareNotification(String to, String recipient, String todo) throws MessagingException {
+		String subject = "ToDoList-Web: ToDo wurde freigegeben";
+		String confirmationUrl = "http://localhost:8080/login";
+
+		Context context = new Context();
+		context.setVariable("username", to);
+		context.setVariable("confirmationUrl", confirmationUrl);
+
+		String htmlContent = templateEngine.process("auth/mail-template/share-notification", context);
+
+		MimeMessage message = mailSender.createMimeMessage();
+		MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
+
+		helper.setTo(recipient);
 		helper.setSubject(subject);
 		helper.setText(htmlContent, true);
 

@@ -2,6 +2,7 @@ package todolistweb.repository;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import todolistweb.model.Todo;
 import todolistweb.model.User;
@@ -27,4 +28,13 @@ public interface TodoRepository extends JpaRepository<Todo, Long> {
     @Query("SELECT DISTINCT t FROM Todo t LEFT JOIN FETCH t.comments WHERE t.user = :user AND t.completedAt IS NOT NULL AND t.completedAt >= :cutoff")
     List<Todo> findCompletedWithCommentsSince(@Param("user") User user, @Param("cutoff") LocalDateTime cutoff);
 
+    @Query("SELECT t FROM Todo t WHERE t.owner = :user OR :user MEMBER OF t.sharedWith")
+    List<Todo> findAllAccessibleByUser(@Param("user") User user);
+
+    @Query("SELECT t FROM Todo t WHERE t.owner = :user OR :user MEMBER OF t.sharedWith")
+    List<Todo> findAllAccessibleBy(@Param("user") User user);
+    
+    @Query("SELECT t FROM Todo t LEFT JOIN FETCH t.sharedWith WHERE t.id = :id")
+    Optional<Todo> findByIdWithShared(@Param("id") Long id);
+    
 }

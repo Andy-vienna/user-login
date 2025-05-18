@@ -2,7 +2,9 @@ package todolistweb.model;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -12,6 +14,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrePersist;
@@ -77,6 +81,21 @@ public class Todo {
 	@OneToMany(mappedBy = "todo", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
 	private List<Comment> comments = new ArrayList<>();
 
+	@ManyToOne
+	@JoinColumn(name = "owner_id")
+	private User owner;
+
+	@ManyToMany
+	@JoinTable(
+	    name = "todo_shared_with",
+	    joinColumns = @JoinColumn(name = "todo_id"),
+	    inverseJoinColumns = @JoinColumn(name = "user_id")
+	)
+	private Set<User> sharedWith = new HashSet<>();
+
+	@Column(name = "is_collaborative")
+	private boolean collaborative = false;
+
     // Getter/Setter
 
 	public Long getId() {
@@ -141,6 +160,30 @@ public class Todo {
 
 	public void setComments(List<Comment> comments) {
 	    this.comments = comments;
+	}
+
+	public User getOwner() {
+		return owner;
+	}
+
+	public void setOwner(User owner) {
+		this.owner = owner;
+	}
+
+	public Set<User> getSharedWith() {
+		return sharedWith;
+	}
+
+	public void setSharedWith(Set<User> sharedWith) {
+		this.sharedWith = sharedWith;
+	}
+
+	public boolean isCollaborative() {
+		return collaborative;
+	}
+
+	public void setCollaborative(boolean collaborative) {
+		this.collaborative = collaborative;
 	}
 	
 }
