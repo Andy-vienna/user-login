@@ -108,7 +108,7 @@ public class HomeController {
 	                .toList();
 
 	        List<Todo> doneTodos = visibleTodos;
-
+	        
 	        model.addAttribute("newTodo", new Todo());
 	        model.addAttribute("openTodos", openTodos);
 	        model.addAttribute("doneTodos", doneTodos);

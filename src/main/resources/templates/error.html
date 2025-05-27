@@ -2,52 +2,12 @@
 <!DOCTYPE html>
 <html lang="de" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fehler - ToDoList-Web</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-	<link rel="icon" href="/favicon.ico?v=1" type="image/x-icon">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f9fafb;
-            padding: 2rem;
-            text-align: center;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 2rem;
-            background-color: #fff;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-        }
-        h1 {
-            font-size: 2rem;
-            color: #e53e3e;
-            margin-bottom: 1rem;
-        }
-        p {
-            font-size: 1rem;
-            color: #4a5568;
-        }
-        .code {
-            margin-top: 1rem;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #2d3748;
-        }
-        .button {
-            margin-top: 2rem;
-            background-color: #3182ce;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 6px;
-            font-size: 1rem;
-            text-decoration: none;
-            display: inline-block;
-        }
-    </style>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" th:href="@{/css/style.css}">
+		<link rel="icon" href="/favicon.ico?v=1" type="image/x-icon">
 </head>
 <body>
     <div class="container">

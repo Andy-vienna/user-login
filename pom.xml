@@ -6,7 +6,7 @@
 
 	<groupId>org.andy</groupId>
 	<artifactId>todo-list-web</artifactId>
-	<version>1.2.201</version>
+	<version>1.2.348</version>
 	<packaging>jar</packaging>
 
 	<name>ToDo-List Web</name>
@@ -16,14 +16,14 @@
 		<java.version>23</java.version>
 		<maven.compiler.source>23</maven.compiler.source>
 		<maven.compiler.target>23</maven.compiler.target>
-		<spring.boot.version>3.4.5</spring.boot.version>
+		<spring.boot.version>3.5.0</spring.boot.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.4.5</version>
+		<version>3.5.0</version>
 		<relativePath />
 	</parent>
 

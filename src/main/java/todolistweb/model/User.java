@@ -2,6 +2,7 @@ package todolistweb.model;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -73,6 +74,18 @@ public class User {
 	@ManyToMany(mappedBy = "sharedWith")
 	private List<Todo> sharedTodos;
 
+	@Override
+	public boolean equals(Object o) {
+	    if (this == o) return true;
+	    if (!(o instanceof User)) return false;
+	    User other = (User) o;
+	    return id != null && id.equals(other.getId());
+	}
+
+	@Override
+	public int hashCode() {
+	    return Objects.hash(id);
+	}
 
 	// Getter und Setter
 	public Long getId() {
