@@ -1,19 +1,18 @@
 <!DOCTYPE html>
+
 <html lang="de" xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta charset="utf-8"/>
-		<meta content="width=device-width, initial-scale=1" name="viewport"/>
-		<title>ToDoList-Web - E-Mail bestätigt</title>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
-		<link rel="stylesheet" th:href="@{/css/style.css}"/>
-		<link href="/favicon.ico?v=1" rel="icon" type="image/x-icon"/>
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet"/>
-		<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"/>
-	</head>
-	<body>
-		<div class="container login-center">
-			<h2 th:utext="${message}">E-Mail bestätigt</h2>
-			<a class="button" th:href="@{/login}">Zum Login</a>
-		</div>
-	</body>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>ToDoList-Web - E-Mail bestätigt</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" th:href="@{/css/style.css}"/>
+<link href="/favicon.ico?v=1" rel="icon" type="image/x-icon"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet"/><script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script></head>
+<body>
+<div class="container login-center">
+<h2 th:utext="${message}">E-Mail bestätigt</h2>
+<a class="button" th:href="@{/login}">Zum Login</a>
+</div>
+</body>
 </html>
