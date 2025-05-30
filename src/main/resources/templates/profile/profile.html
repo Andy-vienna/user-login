@@ -1,28 +1,35 @@
 <!DOCTYPE html>
-
 <html lang="de" xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>ToDoList-Web - Profil bearbeiten</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
-<link rel="stylesheet" th:href="@{/css/style.css}"/>
-<link href="/favicon.ico?v=1" rel="icon" type="image/x-icon"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet"/><script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script></head>
-<body>
-<div class="container login-center">
-<h2>Profil bearbeiten</h2>
-<div class="success" th:if="${success}">
-            Profil erfolgreich aktualisiert.
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <title>ToDoList-Web - Profil bearbeiten</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet" />
+        <link rel="stylesheet" th:href="@{/css/style.css}" />
+        <link rel="icon" type="image/png" href="/images/logo.png">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet" />
+        <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </head>
+    <body>
+        <div class="container login-center">
+            <h2>Profil bearbeiten</h2>
+            <div class="success" th:if="${success}"> Profil erfolgreich aktualisiert. </div>
+            <form method="post" th:action="@{/profile}" th:object="${user}">
+                <div class="input-field">
+                    <input id="email" required="" th:field="*{email}" type="email" />
+                    <label for="email">E-Mail-Adresse</label>
+                </div>
+                <div class="input-field">
+                    <input id="phoneNumber" th:field="*{phoneNumber}" type="text" />
+                    <label for="phoneNumber">Telefonnummer</label>
+                </div>
+                <div class="center-align">
+                    <button class="btn waves-effect waves-light blue" type="submit">Speichern</button>
+                </div>
+            </form>
+            <div class="back-link">
+                <a th:href="@{/}">Zurück zur Startseite</a>
+            </div>
         </div>
-<form method="post" th:action="@{/profile}" th:object="${user}">
-<div class="input-field"><input id="email" required="" th:field="*{email}" type="email"/><label for="email">E-Mail-Adresse</label></div>
-<div class="input-field"><input id="phoneNumber" th:field="*{phoneNumber}" type="text"/><label for="phoneNumber">Telefonnummer</label></div>
-<div class="center-align"><button class="btn waves-effect waves-light blue" type="submit">Speichern</button></div>
-</form>
-<div class="back-link">
-<a th:href="@{/}">Zurück zur Startseite</a>
-</div>
-</div>
-</body>
+    </body>
 </html>

@@ -142,7 +142,7 @@ public class TodoController {
         systemComment.setTodo(todo);
         systemComment.setAuthor(owner);
         systemComment.setCreatedAt(LocalDateTime.now());
-        systemComment.setContent("Freigabe für " + recipient.getUsername() + " erteilt");
+        systemComment.setContent("Freigabe erteilt für: " + recipient.getUsername());
 
         commentRepository.save(systemComment);
 
@@ -176,7 +176,7 @@ public class TodoController {
             Todo todo = optionalTodo.get();
             User toRemove = optionalUser.get();
             User owner = optionalOwner.get();
-            
+
             if (todo.getOwner().getId().equals(owner.getId())) {
                 todo.getSharedWith().remove(toRemove); // ✅ funktioniert jetzt ohne Lazy-Fehler
                 todoRepository.save(todo);
@@ -185,8 +185,8 @@ public class TodoController {
                 systemComment.setTodo(todo);
                 systemComment.setAuthor(owner);
                 systemComment.setCreatedAt(LocalDateTime.now());
-                systemComment.setContent("Freigabe entfernt");
-                
+                systemComment.setContent("Freigabe entfernt für: " + toRemove.getUsername());
+
                 commentRepository.save(systemComment);
                 
                 redirectAttributes.addFlashAttribute("shareSuccess", "Freigabe entfernt.");
@@ -199,7 +199,6 @@ public class TodoController {
 
         return "redirect:/";
     }
-
 
     @GetMapping("/todo/last-update")
     @ResponseBody

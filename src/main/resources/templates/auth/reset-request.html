@@ -1,35 +1,31 @@
-
 <!DOCTYPE html>
 <html lang="de" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ToDoList-Web - Passwort zurücksetzen</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
-    <link rel="icon" href="/favicon.ico?v=1" type="image/x-icon">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>
-</head>
-<body>
-<div class="container login-center">
-    <h2>Passwort zurücksetzen</h2>
-
-    <form th:action="@{/auth/reset-request}" method="post">
-        <div class="input-field">
-            <input type="email" id="email" name="email" required>
-            <label for="email">E-Mail-Adresse</label>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ToDoList-Web - Passwort zurücksetzen</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+        <link rel="icon" type="image/png" href="/images/logo.png">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>
+    </head>
+    <body>
+        <div class="container login-center">
+            <h2>Passwort zurücksetzen</h2>
+            <form th:action="@{/auth/reset-request}" method="post">
+                <div class="input-field">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">E-Mail-Adresse</label>
+                </div>
+                <div class="center-align">
+                    <button type="submit" class="btn waves-effect waves-light blue">Zurücksetzen-Link anfordern</button>
+                </div>
+            </form>
+            <div th:if="${message}" class="message" th:text="${message}"></div>
+            <div class="back-link">
+                <a th:href="@{/auth/login}">Zurück zum Login</a>
+            </div>
         </div>
-        <div class="center-align">
-            <button type="submit" class="btn waves-effect waves-light blue">Zurücksetzen-Link anfordern</button>
-        </div>
-    </form>
-
-    <div th:if="${message}" class="message" th:text="${message}"></div>
-
-    <div class="back-link">
-        <a th:href="@{/auth/login}">Zurück zum Login</a>
-    </div>
-</div>
-</body>
+    </body>
 </html>

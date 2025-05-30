@@ -25,15 +25,15 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class AdminController {
 
 	@Autowired
+	public AdminController(UserRepository userRepository) {
+		this.userRepository = userRepository;
+	}
+	
+	@Autowired
 	private TodoRepository todoRepository;
 
 	@Autowired
 	private UserRepository userRepository;
-
-	@Autowired
-	public AdminController(UserRepository userRepository) {
-		this.userRepository = userRepository;
-	}
 
 	@PostMapping("/admin/user/{id}/delete")
 	public String deleteUser(@PathVariable Long id, Principal principal, RedirectAttributes redirectAttributes) {

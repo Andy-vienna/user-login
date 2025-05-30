@@ -29,6 +29,12 @@
     font-weight: 500;
 }
 
+.logo {
+  height: 50px;
+  margin: 0 1rem;
+  object-fit: contain;
+}
+
 /* Primär (blau) */
 .btn-primary {
     background-color: #3182ce;

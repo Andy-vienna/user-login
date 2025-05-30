@@ -1,20 +1,19 @@
-
 <!DOCTYPE html>
 <html lang="de" xmlns:th="http://www.thymeleaf.org">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Fehler - ToDoList-Web</title>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-		<link rel="stylesheet" th:href="@{/css/style.css}">
-		<link rel="icon" href="/favicon.ico?v=1" type="image/x-icon">
-</head>
-<body>
-    <div class="container">
-        <h1>Da ist etwas schiefgelaufen.</h1>
-        <p>Bitte versuche es später erneut oder kontaktiere den Support.</p>
-        <div class="code" th:text="'Fehlercode: ' + ${status}">Fehlercode: 500</div>
-        <a th:href="@{/}" class="button">Zur Startseite</a>
-    </div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Fehler - ToDoList-Web</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+        <link rel="icon" href="/favicon.ico?v=1" type="image/x-icon">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Da ist etwas schiefgelaufen.</h1>
+            <p>Bitte versuche es später erneut oder kontaktiere den Support.</p>
+            <div class="code" th:text="'Fehlercode: ' + ${status}">Fehlercode: 500</div>
+            <a th:href="@{/}" class="button">Zur Startseite</a>
+        </div>
+    </body>
 </html>

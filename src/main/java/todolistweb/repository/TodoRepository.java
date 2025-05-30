@@ -17,15 +17,11 @@ import org.springframework.data.repository.query.Param;
  *  *  @Repository ist eine Annotation, die angibt, dass dieses Interface ein Repository ist.
  */
 public interface TodoRepository extends JpaRepository<Todo, Long> {
-    List<Todo> findByUser(User user);
-    List<Todo> findByOwner(User owner);
-    
-    @Query("SELECT DISTINCT t FROM Todo t LEFT JOIN FETCH t.sharedWith WHERE t.owner = :owner")
-    List<Todo> findByOwnerWithShares(@Param("owner") User owner);
+	
+	List<Todo> findByOwner(User owner);
 
-    @Query("SELECT DISTINCT t FROM Todo t JOIN FETCH t.sharedWith u WHERE u.id = :userId")
-    List<Todo> findAllSharedWith(@Param("userId") Long userId);
-   
+    List<Todo> findByUser(User user);
+    
     @Query("SELECT t FROM Todo t WHERE t.user = :user AND (t.completed = false OR t.completedAt >= :cutoff)")
     List<Todo> findVisibleTodosByUser(@Param("user") User user, @Param("cutoff") LocalDateTime cutoff);
     
@@ -44,10 +40,19 @@ public interface TodoRepository extends JpaRepository<Todo, Long> {
     @Query("SELECT t FROM Todo t LEFT JOIN FETCH t.sharedWith WHERE t.id = :id")
     Optional<Todo> findByIdWithShared(@Param("id") Long id);
     
-    @Query("SELECT DISTINCT t FROM Todo t LEFT JOIN FETCH t.sharedWith WHERE t.owner.username = :username AND t.completedAt IS NULL")
-    List<Todo> findOpenTodosWithShares(@Param("username") String username);
+    @Query("""
+    	    SELECT DISTINCT t FROM Todo t
+    	    LEFT JOIN FETCH t.sharedWith
+    	    WHERE t.owner = :owner
+    	""")
+    	List<Todo> findByOwnerWithShares(@Param("owner") User owner);
 
-    @Query("SELECT DISTINCT t FROM Todo t LEFT JOIN FETCH t.sharedWith WHERE t.owner.username = :username AND t.completedAt IS NOT NULL")
-    List<Todo> findDoneTodosWithShares(@Param("username") String username);
+    @Query("""
+    	    SELECT DISTINCT t FROM Todo t
+    	    JOIN FETCH t.sharedWith u
+    	    WHERE u.id = :userId
+    	""")
+    	List<Todo> findAllSharedWith(@Param("userId") Long userId);
+
     
 }
