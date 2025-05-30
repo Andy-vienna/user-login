@@ -1,381 +1,223 @@
 <!DOCTYPE html>
-<html lang="de" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head>
-    <meta charset="UTF-8">
-    <title th:text="'ToDoList v' + ${version}">ToDoList</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="icon" href="/favicon.ico?v=1" type="image/x-icon">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style>
-			.version-info {
-			    text-align: right;
-			    padding: 0.25rem 2rem 0 0;
-			    font-size: 0.85rem;
-			    color: #4a5568;
-			    font-style: normal;
-			}
-	        body {
-	            font-family: 'Inter', sans-serif;
-	            margin: 0;
-	            padding: 0;
-	            background-color: #f7fafc;
-	        }
-			.header {
-			    background-color: #2b6cb0;
-			    color: white;
-			    padding: 1rem 2rem;
-			    display: flex;
-			    justify-content: space-between;
-			    align-items: center;
-			}
-			.header .left {
-			    font-size: 1.2rem;
-			    font-weight: 600;
-			}
-			.header .right a {
-			    color: white;
-			    margin-left: 1rem;
-			    text-decoration: none;
-			    font-weight: 500;
-			}
-			
-			.logout-link {
-			    background: none;
-			    border: none;
-			    color: white;
-			    font: inherit;
-			    text-decoration: none;
-			    cursor: pointer;
-			    padding: 0;
-			    margin-left: 1rem;
-			}
-
-	        .main-content {
-	            padding: 2rem;
-	            max-width: 1000px;
-	            margin: 0 auto;
-	        }
-
-	        h2 {
-	            color: #2d3748;
-	            margin-bottom: 1rem;
-	        }
-			
-			.todo-item {
-			    display: flex;
-			    justify-content: space-between;
-			    align-items: flex-start;
-			}
-
-	        .todo-left, .todo-middle, .todo-right {
-	            flex: 1 1 30%;
-	        }
-
-	        .todo-middle {
-	            flex: 2;
-	            width: 100%;
-	        }
-
-	        .todo-middle textarea {
-	            width: 100%;
-	            resize: vertical;
-	            box-sizing: border-box;
-	        }
-
-	        .todo-right {
-	            display: flex;
-	            gap: 0.5rem;
-	            align-items: center;
-	        }
-
-	        .todo-right form {
-	            margin: 0;
-	        }
-
-	        .button {
-	            padding: 0.4rem 0.8rem;
-	            font-size: 0.85rem;
-	            border-radius: 6px;
-	            border: none;
-	            cursor: pointer;
-	        }
-			
-			.btn-new {
-				background-color: #e9d8fd; /* helles Lila */
-				color: #4c1d95;            /* dunkles Lila für Text */
-			}
-
-	        .btn-success {
-	            background-color: #38a169;
-	            color: white;
-	        }
-
-	        .delete-button {
-	            background-color: #e53e3e;
-	            color: white;
-	        }
-			
-			.comment-button {
-			    background-color: #e9d8fd; /* helles Lila */
-			    color: #4c1d95;            /* dunkles Lila für Text */
-			}
-
-	        .todo-card {
-	            margin-bottom: 1rem;
-	            padding: 1rem;
-	            border-radius: 8px;
-	            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-	        }
-
-	        .todo-open {
-	            background-color: #fff5f5;
-	            border-left: 4px solid #e53e3e;
-	        }
-
-	        .todo-done {
-	            background-color: #f0fff4;
-	            border-left: 4px solid #38a169;
-	        }
-
-	        .tab-buttons {
-	            margin: 1rem 0;
-	        }
-
-	        .tab-buttons button {
-	            margin-right: 0.5rem;
-	            padding: 0.5rem 1rem;
-	            border: none;
-	            background-color: #e2e8f0;
-	            cursor: pointer;
-	            border-radius: 5px;
-	        }
-
-	        .tab-buttons button[aria-selected="true"] {
-	            background-color: #2b6cb0;
-	            color: white;
-	        }
-
-	        input[name="description"] {
-	            min-width: 250px;
-	        }
-
-	        input[name="content"] {
-	            width: 100%;
-	            max-width: 500px;
-	            box-sizing: border-box;
-	        }
-
-	        .comment-block p {
-	            margin: 0;
-	        }
-
-			@media (max-width: 768px) {
-			    .todo-left,
-			    .todo-middle,
-			    .todo-right {
-			        flex: 1 1 100%;
-			    }
-
-			    .todo-right {
-			        justify-content: flex-start;
-			    }
-
-			    .todo-middle textarea {
-			        width: 100%;
-			    }
-			}
-	    </style>
-</head>
-<body>
-<div class="header">
-	<div class="left">
-	    Willkommen <span sec:authentication="name"></span>
-	</div>
-	<div class="right">
-	    <a th:href="@{/profile}">Profil</a>
-	    <a th:href="@{/profile/password}">Passwort ändern</a>
-		<form th:action="@{/logout}" method="post" style="display: inline;">
-		    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-		    <button type="submit" class="logout-link">Logout</button>
-		</form>
-	</div>
-</div>
-<div class="version-info" th:text="'Version ' + ${version}"></div>
-	
-<div class="main-content">
-	
-	<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-	<!-- Inhalt für Admin -->
-	<div sec:authorize="hasRole('ADMIN')">
-	    <h2>Benutzerverwaltung</h2>
-	    <table>
-	        <thead>
-	        <tr>
-	            <th>ID</th>
-	            <th>Benutzername</th>
-	            <th>E-Mail</th>
-	            <th>Rolle</th>
-				<th>Rollenwechsel</th>
-	            <th>Aktiv</th>
-	            <th>Aktion</th>
-	        </tr>
-	        </thead>
-	        <tbody>
-	        <tr th:each="user : ${users}">
-	            <td th:text="${user.id}"></td>
-	            <td th:text="${user.username}"></td>
-	            <td th:text="${user.email}"></td>
-	            <td th:text="${user.roles}"></td>
-				<td>
-					<form th:action="@{'/admin/user/' + ${user.id} + '/toggle-role'}" method="post"	th:if="${user.username != loggedInUser}">
-						<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-						<button type="submit" class="login-btn"
-							th:text="${user.roles.contains('ADMIN')} ? 'Zum User' : 'Zum Admin'">
-						</button>
-					</form>
-					<span th:if="${user.username == loggedInUser}">-</span>
-				</td>
-	            <td th:text="${user.enabled} ? 'Ja' : 'Nein'"></td>
-	            <td>
-	                <div th:if="${user.enabled} and ${user.username} != ${#authentication.name}">
-	                    <form th:action="@{'/admin/user/' + ${user.id} + '/disable'}" method="post" style="display:inline;">
-							<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-	                        <button type="submit" class="button">Deaktivieren</button>
-	                    </form>
-	                </div>
-	                <div th:if="${!user.enabled}">
-	                    <span style="color: grey; font-weight: 500;">Deaktiviert</span>
-	                    <form th:if="${user.username} != ${#authentication.name}" th:action="@{'/admin/user/' + ${user.id} + '/enable'}" method="post" style="display:inline;">
-							<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-	                        <button type="submit" class="button enable-button">Aktivieren</button>
-	                    </form>
-	                </div>
-	                <form th:if="${user.username} != ${#authentication.name}" th:action="@{'/admin/user/' + ${user.id} + '/delete'}" method="post" style="display:inline;" onsubmit="return confirm('Benutzer wirklich löschen?');">
-						<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-	                    <button type="submit" class="button delete-button">Löschen</button>
-	                </form>
-	            </td>
-	        </tr>
-	        </tbody>
-	    </table>
-
-		<h2 style="margin-top: 3rem;">System-Logs</h2>
-		<button class="button" onclick="loadLogs()">Logs aktualisieren</button>
-		<pre id="logOutput" th:text="${logs}">Log-Ausgabe lädt...</pre>
-	</div>
-	
-	<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-	<!-- Inhalt für normale Benutzer -->
-	<div sec:authorize="!hasRole('ADMIN')">	
-	<div th:if="${shareSuccess}" class="success-message" th:text="${shareSuccess}"></div>
-	<div th:if="${shareError}" class="error-message" th:text="${shareError}"></div>
-    <section aria-labelledby="todo-heading">
-        <h2 id="todo-heading">Deine ToDo-Liste</h2>
-
-		<!-- Formular für neue Aufgaben -->
-		<form method="post" th:action="@{/todos}" class="todo-form" aria-label="Neue Aufgabe erstellen">
-			<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-		    <label for="newTodoDescription" class="visually-hidden">Neue Aufgabe</label>
-		    <input type="text" id="newTodoDescription" name="description" placeholder="Neue Aufgabe" required aria-required="true" class="form-control" />
-		    <button type="submit" class="button btn-new" aria-label="Aufgabe hinzufügen">Hinzufügen</button>
-		</form><br>
-
-		<!-- Tab-Schaltflächen -->
-        <div class="tab-buttons" role="tablist" aria-label="Aufgabenansicht">
-            <button role="tab" id="tab-open" onclick="showTab('open')" aria-selected="true">Offen</button>
-            <button role="tab" id="tab-done" onclick="showTab('done')" aria-selected="false">Erledigt</button>
+<html lang="de" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <title th:text="'ToDoList v' + ${version}">ToDoList</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet" />
+        <link rel="stylesheet" th:href="@{/css/style.css}" />
+        <link rel="icon" type="image/png" href="/images/logo.png">
+        <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <div class="left">Willkommen <span sec:authentication="name"></span>
+            </div>
+            <div class="right">
+                <a th:href="@{/profile}">Profil</a>
+                <a th:href="@{/profile/password}">Passwort ändern</a>
+                <form method="post" style="display: inline;" th:action="@{/logout}">
+                    <input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden" />
+                    <button class="btn-flat white-text" type="submit">Logout</button>
+                </form>
+            </div>
         </div>
-
-		<!-- Panel: Offene Aufgaben -->
-		<div id="panel-open" role="tabpanel" aria-labelledby="tab-open">
-			<ul class="todo-list" aria-live="polite">
-		    	<li th:each="todo : ${openTodos}" class="todo-card todo-open">
-		        	<div class="todo-item">
-		            	<div class="todo-left">
-							<strong th:text="${todo.description}"></strong><br/>
-							<small>
-								<span>Erstellt: </span>
-								<strong th:text="${todo.owner.username}">Owner</strong>
-								<span th:text="' am ' + ${#temporals.format(todo.createdAt, 'dd.MM.yyyy HH:mm')}"></span>
-							</small>
-		            	</div>
-
-						<!-- Nur für Besitzer: Erledigen und Löschen -->
-						<div class="todo-right" th:if="${todo.owner.username == #authentication.name}">
-						    <form th:action="@{'/todos/' + ${todo.id} + '/complete'}" method="post">
-						        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-						        <button type="submit" class="button btn-success">Erledigt</button>
-						    </form>
-						    <form th:action="@{'/todos/' + ${todo.id} + '/delete'}" method="post" onsubmit="return confirm('Eintrag wirklich löschen?');">
-						        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-						        <button type="submit" class="button delete-button">Löschen</button>
-						    </form>
-						</div>
-		        	</div>
-
-		        	<!-- Kommentarbereich separat -->
-		        	<br><div class="comment-block">
-						<div th:each="comment : ${todo.comments}">
-							<span th:text="${#temporals.format(comment.createdAt, 'dd.MM.yyyy HH:mm')}">Zeit</span>
-							<strong th:text="${comment.author.username}">Autor</strong>:
-							<span th:text="${comment.content}">Inhalt</span>
-						</div>
-		            	<form th:action="@{'/todos/' + ${todo.id} + '/comment'}" method="post">
-							<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-		                	<input type="text" name="content" placeholder="Neuer Kommentar…" required>
-							<button type="submit" class="button comment-button">Speichern</button>
-		            	</form>
-
-						<!-- Freigabeformular nur für Owner sichtbar -->
-						<form th:if="${todo.owner.username == #authentication.name}" th:action="@{/todos/share}" method="post">
-							<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-						    <input type="hidden" name="todoId" th:value="${todo.id}" />
-						    <label for="email">Aufgabe freigeben an E-Mail:</label>
-						    <input type="text" name="identifier" required placeholder="Benutzername oder E-Mail" />
-						    <button type="submit" class="button comment-button">Freigeben</button>
+        <div class="version-info" th:text="'Version ' + ${version}"></div>
+        <div class="main-content">
+            <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+            <!-- Inhalt für Admin -->
+            <div sec:authorize="hasRole('ADMIN')">
+                <h2>Benutzerverwaltung</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Benutzername</th>
+                            <th>E-Mail</th>
+                            <th>Rolle</th>
+                            <th>Rollenwechsel</th>
+                            <th>Aktiv</th>
+                            <th>Aktion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="user : ${users}">
+                            <td th:text="${user.id}"></td>
+                            <td th:text="${user.username}"></td>
+                            <td th:text="${user.email}"></td>
+                            <td th:text="${user.roles}"></td>
+                            <td>
+                                <form method="post" th:action="@{'/admin/user/' + ${user.id} + '/toggle-role'}" th:if="${user.username != loggedInUser}">
+                                    <input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden" />
+                                    <button class="btn waves-effect waves-light orange" th:text="${user.roles.contains('ADMIN')} ? 'Zum User' : 'Zum Admin'" type="submit"></button>
+                                </form>
+                                <span th:if="${user.username == loggedInUser}">-</span>
+                            </td>
+                            <td th:text="${user.enabled} ? 'Ja' : 'Nein'"></td>
+                            <td>
+                                <div th:if="${user.enabled} and ${user.username} != ${#authentication.name}">
+										<form method="post" style="display:inline;" th:action="@{'/admin/user/' + ${user.id} + '/disable'}">
+											<input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden"/>
+											<button class="btn waves-effect waves-light blue" type="submit">Deaktivieren</button>
+										</form>
+									</div>
+									<div th:if="${!user.enabled}">
+										<span style="color: grey; font-weight: 500;">Deaktiviert</span>
+										<form method="post" style="display:inline;" th:action="@{'/admin/user/' + ${user.id} + '/enable'}" th:if="${user.username} != ${#authentication.name}">
+											<input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden"/>
+											<button class="btn waves-effect waves-light teal" type="submit">Aktivieren</button>
+										</form>
+									</div>
+									<form method="post" onsubmit="return confirm('Benutzer wirklich löschen?');" style="display:inline;" th:action="@{'/admin/user/' + ${user.id} + '/delete'}" th:if="${user.username} != ${#authentication.name}">
+										<input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden"/>
+										<button class="btn waves-effect waves-light red" type="submit">Löschen</button>
+									</form>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<h2 style="margin-top: 3rem;">System-Logs</h2>
+					<button class="btn waves-effect waves-light blue" onclick="loadLogs()">Logs aktualisieren</button>
+					<pre id="logOutput" th:text="${logs}">Log-Ausgabe lädt...</pre>
+				</div>
+				<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+				<!-- Inhalt für normale Benutzer -->
+				<div sec:authorize="!hasRole('ADMIN')">
+					<div class="success-message" th:if="${shareSuccess}" th:text="${shareSuccess}"></div>
+					<div class="error-message" th:if="${shareError}" th:text="${shareError}"></div>
+					<section aria-labelledby="todo-heading">
+						<h2 id="todo-heading">Deine ToDo-Liste</h2>
+						<!-- Formular für neue Aufgaben -->
+						<form aria-label="Neue Aufgabe erstellen" class="todo-form" method="post" th:action="@{/todos}">
+							<input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden"/>
+							<!--<label for="newTodoDescription" class="visually-hidden">Neue Aufgabe</label>-->
+							<input aria-required="true" class="form-control" id="newTodoDescription" name="description" placeholder="Neue Aufgabe" required="" type="text"/>
+							<button aria-label="Aufgabe hinzufügen" class="btn waves-effect waves-light blue lighten-2" type="submit">Hinzufügen</button>
 						</form>
-		        	</div>
-		    	</li>
-			</ul>
-		</div>
-
-		<!-- Panel: Erledigte Aufgaben -->
-        <div id="panel-done" role="tabpanel" aria-labelledby="tab-done" hidden>
-            <ul class="todo-list">
-                <li th:each="todo : ${doneTodos}" class="todo-card todo-done">
-                    <div>
-                        <strong th:text="${todo.description}"></strong><br/>
-						<small>
-							<span>Erstellt: </span>
-							<strong th:text="${todo.owner.username}">Owner</strong>
-							<span th:text="' am ' + ${#temporals.format(todo.createdAt, 'dd.MM.yyyy HH:mm')}"></span>
-
-							<br><span>Erledigt: </span>
-							<strong th:text="${todo.owner.username}">Owner</strong>
-							<span th:text="' am ' + ${#temporals.format(todo.completedAt, 'dd.MM.yyyy HH:mm')}"></span>
+						<br/>
+						<!-- Tab-Schaltflächen -->
+						<div aria-label="Aufgabenansicht" class="tab-buttons" role="tablist">
+							<button aria-selected="true" class="btn-flat waves-effect" id="tab-open" onclick="showTab('open')" role="tab">Offen</button>
+							<button aria-selected="false" class="btn-flat waves-effect" id="tab-done" onclick="showTab('done')" role="tab">Erledigt</button>
+						</div>
+						<!-- Panel: Offene Aufgaben -->
+						<div aria-labelledby="tab-open" id="panel-open" role="tabpanel">
+							<ul aria-live="polite" class="todo-list">
+								<li class="todo-card todo-open" th:each="todo : ${openTodos}">
+									<div class="todo-item">
+										<div class="todo-left">
+											<strong th:text="${todo.description}"></strong>
+											<br>
+												<small>
+													<span>Erstellt: </span>
+													<strong th:text="${todo.owner.username}">Owner</strong>
+													<span th:text="' am ' + ${#temporals.format(todo.createdAt, 'dd.MM.yyyy HH:mm')}"></span>
+												</small>
+											</br>
+										</div>
+										<!-- Nur für Besitzer: Erledigen und Löschen -->
+										<div class="todo-right" th:if="${todo.owner.username == #authentication.name}">
+											<form method="post" th:action="@{'/todos/' + ${todo.id} + '/complete'}">
+												<input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden"/>
+												<button class="btn waves-effect waves-light green" type="submit">Erledigt</button>
+											</form>
+											<form method="post" onsubmit="return confirm('Eintrag wirklich löschen?');" th:action="@{'/todos/' + ${todo.id} + '/delete'}">
+												<input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden"/>
+												<button class="btn waves-effect waves-light red" type="submit">Löschen</button>
+											</form>
+										</div>
+									</div>
+									<!-- Kommentarbereich separat -->
+									<br/>
+									<div class="comment-block">
+										<div th:each="comment : ${todo.comments}">
+											<span th:text="${#temporals.format(comment.createdAt, 'dd.MM.yyyy HH:mm')}">Zeit</span>
+											<strong th:text="${comment.author.username}">Autor</strong>:
 							
-							<div class="comment-block">
-						    	<br><div th:each="comment : ${todo.comments}">
-									<span th:text="${#temporals.format(comment.createdAt, 'dd.MM.yyyy HH:mm')}">Zeit</span>
-						        	<strong th:text="${comment.author.username}">Autor</strong>:
-						        	<span th:text="${comment.content}">Inhalt</span>
-						    	</div>
+											<span th:text="${comment.content}">Inhalt</span>
+										</div>
+										<form method="post" th:action="@{'/todos/' + ${todo.id} + '/comment'}">
+											<input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden"/>
+											<input name="content" placeholder="Neuer Kommentar…" required="" type="text"/>
+											<button class="btn waves-effect waves-light purple lighten-2" type="submit">Speichern</button>
+										</form>
+										<!-- Freigabeformular nur für Owner sichtbar -->
+										<form method="post" th:action="@{/todos/share}" th:if="${todo.owner.username == #authentication.name}">
+											<input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden">
+												<input name="todoId" th:value="${todo.id}" type="hidden"/>
+												<label for="email">Aufgabe freigeben:</label>
+												<input name="identifier" placeholder="Benutzername oder E-Mail" required="" type="text"/>
+												<button class="btn waves-effect waves-light purple lighten-2" type="submit">Freigeben</button>
+											</input>
+										</form>
+										<!-- Freigaben anzeigen und entfernen (nur für Owner) -->
+										<div th:if="${todo.owner.username == #authentication.name}">
+											<label for="email">freigegeben für:</label>
+											<ul>
+												<li th:each="user : ${todo.sharedWith}">
+													<span th:text="${user.username}">Nutzer</span>
+													<form method="post" style="display:inline;" th:action="@{/todos/unshare}">
+														<input name="todoId" th:value="${todo.id}" type="hidden"/>
+														<input name="userId" th:value="${user.id}" type="hidden"/>
+														<input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden"/>
+														<button class="btn waves-effect waves-light red" type="submit">Entfernen</button>
+													</form>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- Panel: Erledigte Aufgaben -->
+						<div aria-labelledby="tab-done" hidden id="panel-done" role="tabpanel">
+							<form method="get" th:action="@{/}">
+								<div class="row">
+									<div class="input-field col s6">
+										<input id="days" name="days" type="number" min="1" max="365" th:value="${days}" />
+										<label for="days" class="active">Zeitraum in Tagen für erledigte Aufgaben</label>
+									</div>
+									<div class="input-field col s6">
+										<button type="submit" class="btn waves-effect waves-light blue">Aktualisieren</button>
+									</div>
+								</div>
+							</form>
+							<ul class="todo-list">
+								<li class="todo-card todo-done" th:each="todo : ${doneTodos}">
+									<div>
+										<strong th:text="${todo.description}"></strong>
+										<br>
+											<small>
+												<span>Erstellt: </span>
+												<strong th:text="${todo.owner.username}">Owner</strong>
+												<span th:text="' am ' + ${#temporals.format(todo.createdAt, 'dd.MM.yyyy HH:mm')}"></span>
+												<br/>
+												<span>Erledigt: </span>
+												<strong th:text="${todo.owner.username}">Owner</strong>
+												<span th:text="' am ' + ${#temporals.format(todo.completedAt, 'dd.MM.yyyy HH:mm')}"></span>
+												<div class="comment-block">
+													<br/>
+													<div th:each="comment : ${todo.comments}">
+														<span th:text="${#temporals.format(comment.createdAt, 'dd.MM.yyyy HH:mm')}">Zeit</span>
+														<strong th:text="${comment.author.username}">Autor</strong>:
+                            
+														<span th:text="${comment.content}">Inhalt</span>
+													</div>
+												</div>
+											</small>
+										</div>
+										<div th:if="${todo.owner.username == #authentication.name}">
+											<form method="post" onsubmit="return confirm('Eintrag wirklich löschen?');" style="margin-top: 0.5rem;" th:action="@{'/todos/' + ${todo.id} + '/delete'}">
+												<input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden"/>
+												<button class="btn waves-effect waves-light red" type="submit">Löschen</button>
+											</form>
+										</div>
+									</li>
+								</ul>
 							</div>
-						</small>
-                    </div>
-					<div th:if="${todo.owner.username == #authentication.name}">
-                    	<form th:action="@{'/todos/' + ${todo.id} + '/delete'}" method="post" onsubmit="return confirm('Eintrag wirklich löschen?');" style="margin-top: 0.5rem;">
-							<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-                        	<button type="submit" class="button delete-button">Löschen</button>
-                    	</form>
-					</div>
-                </li>
-            </ul>
-        </div>
-    </section>
-	</div>
-</div>
-<script>
+						</div>
+						<script>
     function showTab(tab) {
         const open = document.getElementById("panel-open");
         const done = document.getElementById("panel-done");
@@ -432,5 +274,5 @@
 	}, 60000);
 
 </script>
-</body>
-</html>
+					</body>
+				</html>

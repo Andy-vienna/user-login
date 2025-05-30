@@ -24,6 +24,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /** HomeController
@@ -64,10 +65,10 @@ public class HomeController {
     }
 
 	@GetMapping("/")
-	public String home(Model model, Authentication authentication, Principal principal) {
-	    boolean isAdmin = authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"));
-
-	    model.addAttribute("version", versionProvider.getVersion());
+	public String home(@RequestParam(defaultValue = "14") int days, Model model, Authentication authentication, Principal principal) {
+		boolean isAdmin = authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"));
+		
+		model.addAttribute("version", versionProvider.getVersion());
 
 	    if (isAdmin) {
 	        // Benutzerliste für Admin
@@ -90,15 +91,17 @@ public class HomeController {
 	            model.addAttribute("logs", "Fehler beim Lesen der Logdatei: " + e.getMessage());
 	        }
 	    }
-
+	    
 	    if (!isAdmin) {
 	        User user = userRepository.findByUsername(principal.getName())
 	                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
-	        // Statt nur owner → auch ToDos, die mit dem Benutzer geteilt sind
+	     // Statt nur owner → auch ToDos, die mit dem Benutzer geteilt sind
 	        List<Todo> allAccessibleTodos = todoRepository.findAllAccessibleBy(user);
+	        
+	        allAccessibleTodos.forEach(todo -> todo.getSharedWith().size());
 
-	        LocalDateTime cutoff = LocalDateTime.now().minusDays(90);
+	        LocalDateTime cutoff = LocalDateTime.now().minusDays(days);
 	        List<Todo> visibleTodos = allAccessibleTodos.stream()
 	                .filter(todo -> todo.isCompleted() && todo.getCompletedAt() != null && todo.getCompletedAt().isAfter(cutoff))
 	                .toList();
@@ -106,12 +109,13 @@ public class HomeController {
 	        List<Todo> openTodos = allAccessibleTodos.stream()
 	                .filter(todo -> !todo.isCompleted())
 	                .toList();
-
+	        
 	        List<Todo> doneTodos = visibleTodos;
 
 	        model.addAttribute("newTodo", new Todo());
 	        model.addAttribute("openTodos", openTodos);
 	        model.addAttribute("doneTodos", doneTodos);
+	        model.addAttribute("days", days);
 	    }
 
 	    return "home";

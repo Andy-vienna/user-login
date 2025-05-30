@@ -13,6 +13,7 @@ import todolistweb.service.EmailService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -141,7 +142,7 @@ public class TodoController {
         systemComment.setTodo(todo);
         systemComment.setAuthor(owner);
         systemComment.setCreatedAt(LocalDateTime.now());
-        systemComment.setContent("Freigabe für " + recipient.getUsername() + " erteilt");
+        systemComment.setContent("Freigabe erteilt für: " + recipient.getUsername());
 
         commentRepository.save(systemComment);
 
@@ -157,6 +158,45 @@ public class TodoController {
         }
 
         redirectAttributes.addFlashAttribute("shareSuccess", "Aufgabe wurde erfolgreich freigegeben.");
+        return "redirect:/";
+    }
+    
+    @PostMapping("/todos/unshare")
+    @PreAuthorize("isAuthenticated()")
+    public String unshareUserFromTodo(@RequestParam Long todoId,
+                                      @RequestParam Long userId,
+                                      Principal principal,
+                                      RedirectAttributes redirectAttributes) {
+
+        Optional<Todo> optionalTodo = todoRepository.findByIdWithShared(todoId);
+        Optional<User> optionalUser = userRepository.findById(userId);
+        Optional<User> optionalOwner = userRepository.findByUsername(principal.getName());
+
+        if (optionalTodo.isPresent() && optionalUser.isPresent() && optionalOwner.isPresent()) {
+            Todo todo = optionalTodo.get();
+            User toRemove = optionalUser.get();
+            User owner = optionalOwner.get();
+
+            if (todo.getOwner().getId().equals(owner.getId())) {
+                todo.getSharedWith().remove(toRemove); // ✅ funktioniert jetzt ohne Lazy-Fehler
+                todoRepository.save(todo);
+                
+                Comment systemComment = new Comment();
+                systemComment.setTodo(todo);
+                systemComment.setAuthor(owner);
+                systemComment.setCreatedAt(LocalDateTime.now());
+                systemComment.setContent("Freigabe entfernt für: " + toRemove.getUsername());
+
+                commentRepository.save(systemComment);
+                
+                redirectAttributes.addFlashAttribute("shareSuccess", "Freigabe entfernt.");
+            } else {
+                redirectAttributes.addFlashAttribute("shareError", "Keine Berechtigung.");
+            }
+        } else {
+            redirectAttributes.addFlashAttribute("shareError", "Fehler bei der Freigabe-Rücknahme.");
+        }
+
         return "redirect:/";
     }
 

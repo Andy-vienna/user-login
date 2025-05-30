@@ -1,8 +1,12 @@
 package todolistweb.controller;
 
+import java.security.Principal;
+import java.util.List;
 import java.util.Optional;
 
+import todolistweb.model.Todo;
 import todolistweb.model.User;
+import todolistweb.repository.TodoRepository;
 import todolistweb.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -11,6 +15,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /** AdminController
  *  Controller for managing users in the application.
@@ -19,19 +24,55 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class AdminController {
 
-	private final UserRepository userRepository;
-
 	@Autowired
 	public AdminController(UserRepository userRepository) {
 		this.userRepository = userRepository;
 	}
+	
+	@Autowired
+	private TodoRepository todoRepository;
+
+	@Autowired
+	private UserRepository userRepository;
 
 	@PostMapping("/admin/user/{id}/delete")
-	@PreAuthorize("hasRole('ADMIN')")
-	public String deleteUser(@PathVariable Long id) {
-		userRepository.deleteById(id);
-		return "redirect:/";
+	public String deleteUser(@PathVariable Long id, Principal principal, RedirectAttributes redirectAttributes) {
+	    User toDelete = userRepository.findById(id).orElse(null);
+	    User currentUser = userRepository.findByUsername(principal.getName()).orElse(null);
+
+	    if (toDelete == null || currentUser == null) {
+	        redirectAttributes.addFlashAttribute("shareError", "Benutzer nicht gefunden.");
+	        return "redirect:/home";
+	    }
+
+	    if (toDelete.getUsername().equals(currentUser.getUsername())) {
+	        redirectAttributes.addFlashAttribute("shareError", "Du kannst dich nicht selbst löschen.");
+	        return "redirect:/home";
+	    }
+
+	    // ✅ 1. ToDos des Benutzers → sharedWith leeren
+	    List<Todo> ownedTodos = todoRepository.findByOwnerWithShares(toDelete);
+	    for (Todo todo : ownedTodos) {
+	        todo.getSharedWith().clear();
+	    }
+
+	    // ✅ 2. ToDos, für die er freigegeben wurde → ihn aus sharedWith entfernen
+	    List<Todo> sharedWithTodos = todoRepository.findAllSharedWith(toDelete.getId());
+	    for (Todo todo : sharedWithTodos) {
+	        todo.getSharedWith().remove(toDelete);
+	    }
+
+	    // ✅ speichern
+	    todoRepository.saveAll(ownedTodos);
+	    todoRepository.saveAll(sharedWithTodos);
+
+	    // ✅ Benutzer löschen
+	    userRepository.delete(toDelete);
+
+	    redirectAttributes.addFlashAttribute("shareSuccess", "Benutzer gelöscht – Freigaben entfernt.");
+	    return "redirect:/";
 	}
+
 
 	@PostMapping("/admin/user/{id}/disable")
 	@PreAuthorize("hasRole('ADMIN')")

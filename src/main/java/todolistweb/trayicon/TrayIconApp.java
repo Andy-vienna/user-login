@@ -3,6 +3,8 @@ package todolistweb.trayicon;
 import org.springframework.boot.SpringApplication;
 import org.springframework.stereotype.Component;
 
+import todolistweb.version.VersionProvider;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.IOException;
@@ -24,6 +26,12 @@ import java.io.IOException;
  */
 @Component
 public class TrayIconApp {
+	
+	private VersionProvider versionProvider = new VersionProvider();
+
+    public TrayIconApp(VersionProvider versionProvider) {
+        this.versionProvider = versionProvider;
+    }
 
     public void setupTrayIcon() {
         if (!SystemTray.isSupported()) return;
@@ -31,7 +39,7 @@ public class TrayIconApp {
         try {
             SystemTray tray = SystemTray.getSystemTray();
 
-            Image image = ImageIO.read(getClass().getResourceAsStream("/icon.png"));
+            Image image = ImageIO.read(getClass().getResourceAsStream("/static/images/logo.png"));
 
             PopupMenu popup = new PopupMenu();
             MenuItem exitItem = new MenuItem("Beenden");
@@ -42,7 +50,7 @@ public class TrayIconApp {
             });
             popup.add(exitItem);
 
-            TrayIcon trayIcon = new TrayIcon(image, "ToDoList-Web", popup);
+            TrayIcon trayIcon = new TrayIcon(image, "ToDoList-Web " + versionProvider.getVersion() , popup);
             trayIcon.setImageAutoSize(true);
             tray.add(trayIcon);
         } catch (IOException | AWTException e) {
